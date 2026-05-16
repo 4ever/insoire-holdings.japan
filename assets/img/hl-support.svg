@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgS" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf8f3"/>
+      <stop offset="1" stop-color="#f3ede2"/>
+    </linearGradient>
+    <radialGradient id="glowS" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#b8945a" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#b8945a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="360" fill="url(#bgS)"/>
+  <rect width="600" height="360" fill="url(#glowS)"/>
+
+  <!-- Handshake illustration -->
+  <g transform="translate(150,90)" stroke="#1a2332" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left arm/sleeve -->
+    <path d="M 0 130 L 70 100 L 110 110 L 130 130" fill="rgba(184,148,90,0.12)"/>
+    <!-- Right arm/sleeve -->
+    <path d="M 300 130 L 230 100 L 190 110 L 170 130" fill="rgba(184,148,90,0.12)"/>
+    <!-- Hands grip -->
+    <path d="M 130 130 Q 150 110 170 130 L 150 150 Z" fill="#b8945a"/>
+    <!-- Fingers -->
+    <path d="M 110 110 L 100 100 L 90 105"/>
+    <path d="M 190 110 L 200 100 L 210 105"/>
+    <!-- Cufflink hints -->
+    <circle cx="75" cy="103" r="3" fill="#b8945a"/>
+    <circle cx="225" cy="103" r="3" fill="#b8945a"/>
+  </g>
+
+  <!-- Sparkle accents -->
+  <g fill="#b8945a">
+    <circle cx="110" cy="180" r="4"/>
+    <circle cx="490" cy="200" r="5"/>
+    <circle cx="450" cy="100" r="3"/>
+    <circle cx="140" cy="290" r="3"/>
+  </g>
+
+  <text x="300" y="320" text-anchor="middle" fill="#1a2332" font-family="'Noto Serif JP',serif" font-size="16" font-style="italic" font-weight="600">Business Support</text>
+  <text x="300" y="340" text-anchor="middle" fill="#8b6f3e" font-family="'Noto Sans JP',sans-serif" font-size="9" letter-spacing="3" font-weight="600">END TO END</text>
+</svg>

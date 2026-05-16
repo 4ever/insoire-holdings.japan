@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Service | Inspire Holdings Inc.</title>
+<meta name="description" content="不動産、法人設立、IT・EC、ライフスタイル移住まで。Inspire Holdings の提供するサービス一覧。" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">i</span>
+      <span class="logo-text">INSPIRE HOLDINGS<small>Bridging Japan × Philippines</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="company.html">COMPANY</a>
+      <a href="service.html">SERVICE</a>
+      <a href="request.html">CONTACT</a>
+      <span class="lang"><a href="en/service.html">EN</a> <span class="sep">|</span> <a class="active">日本語</a></span>
+      <a href="request.html" class="cta-btn">REQUEST INFO</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="menu">≡</button>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a><span class="sep">/</span><span>SERVICE</span>
+    </div>
+    <h1 class="page-hero-title">Services</h1>
+    <p class="page-hero-sub">
+      不動産、法人設立、フィリピン現地での日常生活まで —
+      最初のお問い合わせから長期パートナーシップまで、専門家として伴走します。
+    </p>
+  </div>
+</section>
+
+<!-- ===== SERVICES TEASER (3 cards) ===== -->
+<section class="section section-light">
+  <div class="container">
+    <div class="svc-teaser-grid">
+      <article class="svc-teaser">
+        <div class="svc-teaser-img svc-img-business" role="img" aria-label="Business growth chart"></div>
+        <div class="svc-teaser-body">
+          <span class="svc-teaser-tag">BUSINESS RELATED</span>
+          <h3>海外進出 ビジネスコンサルティング</h3>
+          <p>企業の海外進出に関する市場調査、情報提供、コンサルティング業務。フィリピン市場攻略の戦略パートナーとして支援します。</p>
+          <a href="#business" class="learn-more">Learn more →</a>
+        </div>
+      </article>
+
+      <article class="svc-teaser">
+        <div class="svc-teaser-img svc-img-general" role="img" aria-label="System and code"></div>
+        <div class="svc-teaser-body">
+          <span class="svc-teaser-tag">GENERAL SUPPORT</span>
+          <h3>ITシステム 企画・開発・運用</h3>
+          <p>ITシステム、業務管理システム、アプリケーションの企画・開発・販売・運用。日比双方の開発リソースを最適活用。</p>
+          <a href="#general" class="learn-more">Learn more →</a>
+        </div>
+      </article>
+
+      <article class="svc-teaser">
+        <div class="svc-teaser-img svc-img-ecommerce" role="img" aria-label="Global e-commerce"></div>
+        <div class="svc-teaser-body">
+          <span class="svc-teaser-tag">E-COMMERCE & DIGITAL</span>
+          <h3>EC・デジタル基盤 立ち上げ</h3>
+          <p>電子商取引(EC)及びデジタルプラットフォームの企画・開発・運用。ストア構築からスケールまで伴走します。</p>
+          <a href="#ecommerce" class="learn-more">Learn more →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICE DETAILS ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">— SERVICE DETAILS</span>
+      <h2 class="section-title">サービス詳細</h2>
+      <p class="section-sub">提供内容、想定期間、期待される成果をご紹介します。</p>
+    </div>
+
+    <div class="detail-block" id="business">
+      <div class="detail-info">
+        <span class="detail-num">01</span>
+        <h3>海外進出を、データで設計する。</h3>
+        <p>
+          「現地のことが分からない」「どこから手をつければいいか分からない」
+          — そんな企業様向けに、フィリピン市場の最新データと長年の実績にもとづく
+          コンサルティングを提供します。
+        </p>
+        <div class="detail-list">
+          <div class="item"><strong>市場調査</strong>業界レポート・競合分析</div>
+          <div class="item"><strong>法人設立</strong>登記・ライセンス取得</div>
+          <div class="item"><strong>人材確保</strong>採用・労務支援</div>
+          <div class="item"><strong>運営支援</strong>会計・税務代行</div>
+        </div>
+      </div>
+      <div class="detail-visual">
+        <div class="visual-head">
+          <h4>進出ステップ別 成功確率</h4>
+          <span class="badge">SUCCESS RATE</span>
+        </div>
+        <div class="chart-wrap"><canvas id="businessChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="detail-block reverse" id="general">
+      <div class="detail-info">
+        <span class="detail-num">02</span>
+        <h3>業務基盤を、次世代へ。</h3>
+        <p>
+          レガシーシステムからの脱却、クラウドネイティブ環境への移行、業務自動化まで。
+          日比双方の開発リソースを活用した最適なソリューションを提供します。
+        </p>
+        <div class="detail-list">
+          <div class="item"><strong>開発体制</strong>東京 + マニラ</div>
+          <div class="item"><strong>技術スタック</strong>React / Node / AWS</div>
+          <div class="item"><strong>SLA</strong>99.95% 稼働保証</div>
+          <div class="item"><strong>セキュリティ</strong>ISO 27001 準拠</div>
+        </div>
+      </div>
+      <div class="detail-visual">
+        <div class="visual-head">
+          <h4>システム品質 評価</h4>
+          <span class="badge">QUALITY</span>
+        </div>
+        <div class="chart-wrap"><canvas id="generalChart"></canvas></div>
+      </div>
+    </div>
+
+    <div class="detail-block" id="ecommerce">
+      <div class="detail-info">
+        <span class="detail-num">03</span>
+        <h3>ECで、世界を商圏にする。</h3>
+        <p>
+          越境ECからD2Cブランド構築、サブスクリプションまで。プラットフォーム選定、
+          構築、マーケティング、CRM運用までフルファネルで対応します。
+        </p>
+        <div class="detail-list">
+          <div class="item"><strong>対応PF</strong>Shopify / 自社開発</div>
+          <div class="item"><strong>ローンチ</strong>最短 4 週間</div>
+          <div class="item"><strong>平均CVR</strong>3.8%</div>
+          <div class="item"><strong>運用代行</strong>月次レポート対応</div>
+        </div>
+      </div>
+      <div class="detail-visual">
+        <div class="visual-head">
+          <h4>EC流通総額 (GMV) 推移</h4>
+          <span class="badge">+312% GROWTH</span>
+        </div>
+        <div class="chart-wrap"><canvas id="ecChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-head center">
+      <span class="section-tag">— OUR PROCESS</span>
+      <h2 class="section-title">プロジェクト進行プロセス</h2>
+      <p class="section-sub">初回相談から運用定着まで、明確なマイルストーンで進行します。</p>
+    </div>
+
+    <div class="process">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h4>無料コンサルテーション</h4>
+        <p>現状の課題、目指す姿をヒアリング。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h4>調査・戦略立案</h4>
+        <p>具体的な実行戦略とロードマップをご提案。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h4>実装・構築</h4>
+        <p>合意したプランに基づき確実に実行。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h4>ローンチ・運用</h4>
+        <p>KPIモニタリング、改善提案を継続。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <h4>スケール・最適化</h4>
+        <p>次の成長フェーズへ継続的に支援。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="container container-narrow">
+    <div class="section-head center">
+      <span class="section-tag">— FAQ</span>
+      <h2 class="section-title">よくあるご質問</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>相談は無料ですか？</summary><p>はい、初回コンサルテーションは完全無料です。フィリピン市場の概況、貴社の課題ヒアリングから始め、最適なご提案をいたします。</p></details>
+      <details class="faq-item"><summary>どのくらいの規模の企業を支援していますか？</summary><p>スタートアップから上場企業まで、幅広い規模の企業様を支援しています。</p></details>
+      <details class="faq-item"><summary>フィリピン現地の言語対応は可能ですか？</summary><p>日本語、英語、タガログ語の3言語に対応可能です。</p></details>
+      <details class="faq-item"><summary>プロジェクトの最短期間はどのくらいですか？</summary><p>EC構築は最短4週間、法人設立は90日、システム開発は3ヶ月〜が一般的です。</p></details>
+      <details class="faq-item"><summary>費用感を教えてください</summary><p>コンサルティングは月額50万円〜、システム開発は500万円〜、EC構築は300万円〜が目安です。</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GET IN TOUCH (matching reference structure) ===== -->
+<section class="touch-band">
+  <div class="container">
+    <div>
+      <span class="section-tag light">— PLEASE FEEL FREE TO CONTACT US</span>
+      <h2>お気軽にお問い合わせください。</h2>
+      <div class="touch-checks">
+        <div>業者が多すぎて、誰を信じればいいか分からない</div>
+        <div>事業を拡大したいが、何から始めればいいか分からない</div>
+        <div>語学留学について、もっと詳しく知りたい</div>
+      </div>
+      <p>その他、お気軽にご質問・ご相談ください。</p>
+      <a href="request.html" class="btn-primary">REQUEST INFO</a>
+    </div>
+    <div class="touch-side">
+      <div class="ts-label">PHONE INQUIRY</div>
+      <div class="ts-phone">03-6823-5140</div>
+      <div class="ts-hours">受付時間 9:00 – 17:00 (土日祝休)</div>
+      <a href="request.html" class="btn-ghost" style="margin-top:8px">フォームから問い合わせる →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">i</span>
+        <span class="logo-text">INSPIRE HOLDINGS</span>
+      </a>
+      <p>世界規模の投資・移住という複雑な課題を、ビジネス・個人双方に分かりやすく。Inspire Holdings は日比間をつなぐ総合ソリューション・パートナーです。</p>
+      <p style="margin-top:14px"><a href="request.html" style="color:var(--accent);font-weight:600;letter-spacing:0.15em;font-size:12px">→ REQUEST FORM</a></p>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="company.html">About Us</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="request.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#business">Business Related</a></li>
+        <li><a href="#general">General Support</a></li>
+        <li><a href="#ecommerce">E-Commerce</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Office</h5>
+      <ul>
+        <li>〒100-6303</li>
+        <li>東京都千代田区<br>丸の内1-8-1</li>
+        <li>Mon - Fri: 9:00 – 18:00</li>
+        <li>03-6823-5140</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inspire Holdings Inc. Co., Ltd. All Rights Reserved.</span>
+    <span>Terms of Service · Cookie Policy</span>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<script src="assets/charts.js" defer></script>
+</body>
+</html>

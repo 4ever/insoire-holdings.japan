@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#243248"/>
+      <stop offset="1" stop-color="#0f1822"/>
+    </linearGradient>
+    <radialGradient id="glowG" cx="0.7" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#b8945a" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#b8945a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridG" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="360" fill="url(#bgG)"/>
+  <rect width="600" height="360" fill="url(#gridG)"/>
+  <rect width="600" height="360" fill="url(#glowG)"/>
+
+  <!-- Window/Code panel -->
+  <g transform="translate(60,80)">
+    <rect x="0" y="0" width="480" height="220" rx="6" fill="rgba(0,0,0,0.4)" stroke="rgba(184,148,90,0.4)" stroke-width="1"/>
+    <!-- Title bar -->
+    <rect x="0" y="0" width="480" height="28" rx="6" fill="rgba(255,255,255,0.06)"/>
+    <circle cx="14" cy="14" r="4" fill="#ff5f56"/>
+    <circle cx="30" cy="14" r="4" fill="#ffbd2e"/>
+    <circle cx="46" cy="14" r="4" fill="#27c93f"/>
+    <text x="240" y="18" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="10">system.config.ts</text>
+
+    <!-- Code lines -->
+    <g font-family="monospace" font-size="11" opacity="0.85">
+      <text x="20" y="58" fill="rgba(255,255,255,0.4)">01</text>
+      <text x="50" y="58" fill="#b8945a">import</text>
+      <text x="105" y="58" fill="#c9a96e">{ Inspire }</text>
+      <text x="190" y="58" fill="#b8945a">from</text>
+      <text x="232" y="58" fill="#c9a96e">"@core"</text>
+
+      <text x="20" y="82" fill="rgba(255,255,255,0.4)">02</text>
+
+      <text x="20" y="106" fill="rgba(255,255,255,0.4)">03</text>
+      <text x="50" y="106" fill="#b8945a">const</text>
+      <text x="92" y="106" fill="#fff">stack</text>
+      <text x="138" y="106" fill="rgba(255,255,255,0.5)">=</text>
+      <text x="150" y="106" fill="#c9a96e">["React","Node","AWS"]</text>
+
+      <text x="20" y="130" fill="rgba(255,255,255,0.4)">04</text>
+      <text x="50" y="130" fill="#b8945a">const</text>
+      <text x="92" y="130" fill="#fff">sla</text>
+      <text x="120" y="130" fill="rgba(255,255,255,0.5)">=</text>
+      <text x="132" y="130" fill="#c9a96e">"99.95%"</text>
+
+      <text x="20" y="154" fill="rgba(255,255,255,0.4)">05</text>
+
+      <text x="20" y="178" fill="rgba(255,255,255,0.4)">06</text>
+      <text x="50" y="178" fill="#b8945a">export</text>
+      <text x="102" y="178" fill="#fff">default</text>
+      <text x="158" y="178" fill="#fff">Inspire</text>
+      <text x="208" y="178" fill="rgba(255,255,255,0.5)">.</text>
+      <text x="214" y="178" fill="#c9a96e">build</text>
+      <text x="248" y="178" fill="rgba(255,255,255,0.5)">(</text>
+      <text x="256" y="178" fill="#fff">stack</text>
+      <text x="296" y="178" fill="rgba(255,255,255,0.5)">)</text>
+
+      <text x="20" y="202" fill="rgba(255,255,255,0.4)">07</text>
+    </g>
+
+    <!-- Cursor -->
+    <rect x="305" y="170" width="2" height="14" fill="#b8945a"/>
+  </g>
+</svg>

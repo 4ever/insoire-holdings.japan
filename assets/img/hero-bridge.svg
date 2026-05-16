@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgHero" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a3a52"/>
+      <stop offset="1" stop-color="#0f1822"/>
+    </linearGradient>
+    <radialGradient id="glowHero" cx="0.3" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#b8945a" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#b8945a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowHero2" cx="0.75" cy="0.7" r="0.5">
+      <stop offset="0" stop-color="#b8945a" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#b8945a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="gridHero" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bgHero)"/>
+  <rect width="1600" height="900" fill="url(#gridHero)"/>
+  <rect width="1600" height="900" fill="url(#glowHero)"/>
+  <rect width="1600" height="900" fill="url(#glowHero2)"/>
+
+  <!-- Tokyo skyline (left) -->
+  <g transform="translate(80,650)" fill="rgba(184,148,90,0.18)" stroke="rgba(184,148,90,0.35)" stroke-width="1">
+    <rect x="0"   y="-60"  width="40" height="60"/>
+    <rect x="50"  y="-110" width="50" height="110"/>
+    <rect x="110" y="-170" width="60" height="170"/>
+    <rect x="180" y="-90"  width="40" height="90"/>
+    <rect x="230" y="-140" width="50" height="140"/>
+    <rect x="290" y="-220" width="70" height="220"/>
+    <polygon points="290,-220 325,-260 360,-220" fill="rgba(184,148,90,0.25)"/>
+    <rect x="370" y="-100" width="50" height="100"/>
+    <rect x="430" y="-180" width="55" height="180"/>
+    <rect x="495" y="-130" width="40" height="130"/>
+  </g>
+
+  <!-- Manila skyline (right) -->
+  <g transform="translate(1020,650)" fill="rgba(184,148,90,0.18)" stroke="rgba(184,148,90,0.35)" stroke-width="1">
+    <rect x="0"   y="-130" width="40" height="130"/>
+    <rect x="50"  y="-200" width="60" height="200"/>
+    <rect x="120" y="-90"  width="40" height="90"/>
+    <rect x="170" y="-260" width="80" height="260"/>
+    <polygon points="170,-260 210,-310 250,-260" fill="rgba(184,148,90,0.25)"/>
+    <rect x="260" y="-150" width="50" height="150"/>
+    <rect x="320" y="-110" width="45" height="110"/>
+    <rect x="375" y="-180" width="55" height="180"/>
+    <rect x="440" y="-95"  width="40" height="95"/>
+  </g>
+
+  <!-- Bridge / arc connecting -->
+  <path d="M 200 650 Q 800 200 1400 650" fill="none" stroke="rgba(184,148,90,0.4)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 240 650 Q 800 280 1360 650" fill="none" stroke="rgba(184,148,90,0.25)" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <path d="M 280 650 Q 800 360 1320 650" fill="none" stroke="rgba(184,148,90,0.15)" stroke-width="1" stroke-dasharray="3 5"/>
+
+  <!-- Sun / accent circle -->
+  <circle cx="800" cy="180" r="80" fill="rgba(184,148,90,0.08)"/>
+  <circle cx="800" cy="180" r="40" fill="rgba(184,148,90,0.15)"/>
+
+  <!-- City labels -->
+  <text x="280" y="700" fill="rgba(184,148,90,0.6)" font-family="'Noto Sans JP',sans-serif" font-size="11" letter-spacing="6" font-weight="600">TOKYO</text>
+  <text x="1180" y="700" fill="rgba(184,148,90,0.6)" font-family="'Noto Sans JP',sans-serif" font-size="11" letter-spacing="6" font-weight="600">MANILA</text>
+
+  <!-- Ground line -->
+  <line x1="0" y1="650" x2="1600" y2="650" stroke="rgba(184,148,90,0.2)" stroke-width="1"/>
+</svg>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Request Form | Inspire Holdings Inc.</title>
+<meta name="description" content="Request information about real estate, business expansion, and relocation to the Philippines. We also accept consultations by phone (03-6823-5140)." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">i</span>
+      <span class="logo-text">INSPIRE HOLDINGS<small>Bridging Japan × Philippines</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="company.html">COMPANY</a>
+      <a href="service.html">SERVICE</a>
+      <a href="request.html">CONTACT</a>
+      <span class="lang"><a class="active">EN</a> <span class="sep">|</span> <a href="../request.html">日本語</a></span>
+      <a href="request.html" class="cta-btn">REQUEST INFO</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="menu">≡</button>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a><span class="sep">/</span><span>REQUEST FORM</span>
+    </div>
+    <h1 class="page-hero-title">Request Form</h1>
+    <p class="page-hero-sub">
+      Request information about real estate, business expansion, and relocation to the Philippines here.
+      We also accept consultations by phone (03-6823-5140).
+    </p>
+  </div>
+</section>
+
+<!-- ===== REQUEST FORM ===== -->
+<section class="section section-light">
+  <div class="container">
+    <div class="request-wrap">
+      <!-- FORM -->
+      <div class="request-form-card">
+        <span class="section-tag">— SEND A MESSAGE</span>
+        <h3>Fill out the form below</h3>
+        <p class="form-sub">
+          We will respond to your inquiry within 2 business days.
+        </p>
+
+        <form class="request-form" id="requestForm">
+          <div class="form-row">
+            <label>Your name <span class="req">*</span>
+              <input type="text" required placeholder="Taro Yamada">
+            </label>
+            <label>Your name (in Roman letters) <span class="req">*</span>
+              <input type="text" required placeholder="Taro Yamada">
+            </label>
+          </div>
+
+          <label>Sex <span class="req">*</span>
+            <div class="radio-row">
+              <span><input type="radio" name="gender" value="male" required> Male</span>
+              <span><input type="radio" name="gender" value="female"> Female</span>
+              <span><input type="radio" name="gender" value="other"> Other</span>
+            </div>
+          </label>
+
+          <label>Prefecture
+            <select>
+              <option value="">— Your area —</option>
+              <option>Hokkaido</option><option>Aomori</option><option>Iwate</option><option>Miyagi</option><option>Akita</option><option>Yamagata</option><option>Fukushima</option>
+              <option>Ibaraki</option><option>Tochigi</option><option>Gunma</option><option>Saitama</option><option>Chiba</option><option>Tokyo</option><option>Kanagawa</option>
+              <option>Niigata</option><option>Toyama</option><option>Ishikawa</option><option>Fukui</option><option>Yamanashi</option><option>Nagano</option>
+              <option>Shizuoka</option><option>Aichi</option><option>Mie</option><option>Shiga</option><option>Kyoto</option><option>Osaka</option>
+              <option>Hyogo</option><option>Nara</option><option>Wakayama</option><option>Tottori</option><option>Shimane</option><option>Okayama</option>
+              <option>Hiroshima</option><option>Yamaguchi</option><option>Tokushima</option><option>Kagawa</option><option>Ehime</option><option>Kochi</option>
+              <option>Fukuoka</option><option>Saga</option><option>Nagasaki</option><option>Kumamoto</option><option>Oita</option><option>Miyazaki</option>
+              <option>Kagoshima</option><option>Okinawa</option>
+            </select>
+          </label>
+
+          <div class="form-row">
+            <label>Email address <span class="req">*</span>
+              <input type="email" required placeholder="example@company.com">
+            </label>
+            <label>Phone number (without hyphens)
+              <input type="tel" placeholder="09012345678">
+            </label>
+          </div>
+
+          <label>What are your interests? <span class="req">*</span>
+            <select required>
+              <option value="">— choose —</option>
+              <option>Philippine Real Estate</option>
+              <option>Opening a Bank Account</option>
+              <option>Business Expansion</option>
+              <option>Company Formation</option>
+              <option>Relocation Support</option>
+              <option>Language Study Abroad</option>
+              <option>Healthcare &amp; Tourism</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>Questions, etc.
+            <textarea placeholder="Please feel free to ask anything"></textarea>
+          </label>
+
+          <button type="submit" class="btn-primary">Send Request</button>
+        </form>
+      </div>
+
+      <!-- SIDE -->
+      <div class="request-side">
+        <div class="side-card">
+          <span class="sc-tag">CONSULTATION DESK</span>
+          <h4>How We Can Help</h4>
+          <p>
+            Our initial consultation is free. We can guide you through investment planning,
+            business setup, and relocation concerns. For urgent matters, please call us directly
+            during office hours.
+          </p>
+        </div>
+
+        <div class="side-card">
+          <span class="sc-tag">PHONE INQUIRY</span>
+          <h4>Please feel free to contact us</h4>
+          <div class="side-phone">03-6823-5140</div>
+          <div class="side-hours">Opening hours 9:00 – 17:00 (excl. Sat / Sun / holidays)</div>
+        </div>
+
+        <div class="side-card">
+          <span class="sc-tag">OFFICIAL LINE</span>
+          <h4>Connect on LINE</h4>
+          <p>Scan the QR code or tap the button to connect with us on LINE for quick responses.</p>
+          <div class="line-qr">💬</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">i</span>
+        <span class="logo-text">INSPIRE HOLDINGS</span>
+      </a>
+      <p>Empowering businesses and individuals to navigate the complex landscapes of global investment and relocation.</p>
+      <p style="margin-top:14px"><a href="request.html" style="color:var(--accent);font-weight:600;letter-spacing:0.15em;font-size:12px">→ REQUEST FORM</a></p>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="company.html">About Us</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="request.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="service.html#business">Business Related</a></li>
+        <li><a href="service.html#general">General Support</a></li>
+        <li><a href="service.html#ecommerce">E-Commerce</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Office</h5>
+      <ul>
+        <li>100-6303</li>
+        <li>1-8-1 Marunouchi,<br>Chiyoda-ku, Tokyo, Japan</li>
+        <li>Mon - Fri: 9:00 – 18:00</li>
+        <li>03-6823-5140</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inspire Holdings Inc. Co., Ltd. All Rights Reserved.</span>
+    <span>Terms of Service · Cookie Policy</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js" defer></script>
+</body>
+</html>
