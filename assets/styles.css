@@ -20,6 +20,7 @@
   --serif:'Noto Serif JP',serif;
   --sans:'Noto Sans JP',sans-serif;
   --maxw:1280px;
+  --logo-aspect:958 / 260;
   /* Footer logo: white on dark footer */
   --footer-logo-filter: brightness(0) invert(1);
 }
@@ -61,26 +62,17 @@ button{font-family:inherit;cursor:pointer}
   display:block;
   height:36px;
   width:auto;
-  max-width:min(168px,48vw);
+  aspect-ratio:var(--logo-aspect);
   object-fit:contain;
 }
-.logo-img--footer{
-  height:32px;
-  max-width:150px;
-}
+.logo-img--footer{height:32px}
 .footer-brand .logo-img{
   filter:var(--footer-logo-filter);
   opacity:1;
 }
 @media(max-width:960px){
-  .logo-img{
-    height:30px;
-    max-width:min(140px,52vw);
-  }
-  .logo-img--footer{
-    height:28px;
-    max-width:130px;
-  }
+  .logo-img{height:30px}
+  .logo-img--footer{height:28px}
 }
 .nav-links{display:flex;gap:32px;align-items:center}
 .nav-links > a{
