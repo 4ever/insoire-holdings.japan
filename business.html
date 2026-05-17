@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ビジネスサポート | Inspire Holdings Inc.</title>
+<meta name="description" content="フィリピンへの参入から事業拡大まで、日本企業のビジネスを一気通貫でサポート。会社登記・市場参入・ライセンス取得・現地パートナー紹介。" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* ===== BUSINESS PAGE ===== */
+  .biz-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+  @media(max-width:900px){ .biz-services-grid { grid-template-columns: 1fr 1fr; } }
+  @media(max-width:560px){ .biz-services-grid { grid-template-columns: 1fr; } }
+
+  .biz-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px 24px;
+    border: 1px solid #e4e8f0;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .biz-card:hover {
+    box-shadow: 0 8px 32px rgba(15,40,80,0.10);
+    transform: translateY(-4px);
+  }
+  .biz-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #eef2f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .biz-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 10px;
+  }
+  .biz-card p {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  /* Why section */
+  .why-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  @media(max-width:900px){ .why-layout { grid-template-columns: 1fr; gap: 40px; } }
+
+  .why-check-list {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+  }
+  .why-check-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #e8edf5;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .why-check-list li:last-child { border-bottom: none; }
+  .why-check-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Steps card */
+  .steps-card {
+    background: linear-gradient(140deg, #1a3a6b 0%, #0d2244 100%);
+    border-radius: 16px;
+    padding: 36px 32px;
+    color: #fff;
+  }
+  .steps-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 28px;
+    letter-spacing: 0.05em;
+  }
+  .step-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .step-item:last-child { border-bottom: none; }
+  .step-num-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    flex-shrink: 0;
+  }
+  .step-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .step-item p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* CTA band */
+  .cta-band {
+    background: #1e3a6e;
+    padding: 72px 0;
+    text-align: center;
+    color: #fff;
+  }
+  .cta-band h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  .cta-band p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.78);
+    margin-bottom: 32px;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .cta-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.85);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .cta-phone span { font-size: 13px; font-weight: 400; }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/img/ihilogo.webp" alt="Inspire Holdings" class="logo-img logo-img--header" width="128" height="36" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="company.html">COMPANY</a>
+      <a href="service.html" class="active">SERVICE</a>
+      <a href="request.html">CONTACT</a>
+      <span class="lang"><a href="en/business.html">EN</a> <span class="sep">|</span> <a class="active">日本語</a></span>
+      <a href="request.html" class="cta-btn">REQUEST INFO</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="menu">≡</button>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a><span class="sep">/</span>
+      <a href="service.html">SERVICE</a><span class="sep">/</span>
+      <span>ビジネスサポート</span>
+    </div>
+    <h1 class="page-hero-title">ビジネス サポート</h1>
+    <p class="page-hero-sub">
+      フィリピンへの参入から事業拡大まで、日本企業のビジネスを一気通貫でサポートします。
+    </p>
+  </div>
+</section>
+
+<!-- ===== SERVICES GRID ===== -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-head center">
+      <span class="section-tag">— サービス内容</span>
+      <h2 class="section-title">ビジネスサポートサービス</h2>
+      <p class="section-sub">フィリピンでのビジネスのあらゆるステージで、内側からサポートします。</p>
+    </div>
+
+    <div class="biz-services-grid">
+      <div class="biz-card">
+        <div class="biz-card-icon">🏢</div>
+        <h4>会社登記</h4>
+        <p>フィリピンで会社・支店を設立する際の法人登記を全面サポート。書類作成から現地での手続きまで一貫して対応します。</p>
+      </div>
+      <div class="biz-card">
+        <div class="biz-card-icon">📊</div>
+        <h4>市場参入コンサルティング</h4>
+        <p>フィリピン市場の競合環境・規制・消費者動向を深く分析。投資前に必要な情報をもとに、最適な参入戦略を立案します。</p>
+      </div>
+      <div class="biz-card">
+        <div class="biz-card-icon">📋</div>
+        <h4>ライセンス・許可取得</h4>
+        <p>事業運営に必要なビジネスパーミット、BIR登録、業界別ライセンスの取得を代行。煩雑な行政手続きを一括対応します。</p>
+      </div>
+      <div class="biz-card">
+        <div class="biz-card-icon">🤝</div>
+        <h4>現地パートナー紹介</h4>
+        <p>長年の実績で築いたネットワークを活用し、信頼できる地元パートナー・サプライヤー・ディストリビューターをご紹介します。</p>
+      </div>
+      <div class="biz-card">
+        <div class="biz-card-icon">📈</div>
+        <h4>事業拡大戦略</h4>
+        <p>フィリピン国内でのスケールを目指す日本企業向けに、成長段階ごとの戦略を設計・実行支援します。</p>
+      </div>
+      <div class="biz-card">
+        <div class="biz-card-icon">🍽️</div>
+        <h4>フランチャイズ・飲食業コンサルティング</h4>
+        <p>レストラン・フランチャイズ・小売業のフィリピン進出に特化した市場調査とマネジメントコンサルティングを提供します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section class="section">
+  <div class="container">
+    <div class="why-layout">
+
+      <!-- Left -->
+      <div>
+        <span class="section-tag">— WHY CHOOSE US</span>
+        <h2 class="section-title" style="margin-top:12px">フィリピンでの<br>信頼できるパートナー</h2>
+        <p style="font-size:14px;line-height:1.9;color:var(--text);margin-top:16px">
+          15年以上にわたる日比ビジネス支援の実績と、深い現地ネットワークが私たちの強みです。初回相談から長期運用まで、一貫したサポート体制で貴社の成長を支えます。
+        </p>
+        <ul class="why-check-list">
+          <li>フィリピンのビジネス規制に関する深い地元知識とネットワーク</li>
+          <li>信頼できる地元パートナーと行政機関との強固なコネクション</li>
+          <li>初回相談から事業運営まで一気通貫のエンドツーエンドサポート</li>
+          <li>日比両国に精通したバイリンガルチームによるシームレスな対応</li>
+          <li>複数業界にわたる日本企業支援の豊富な実績</li>
+        </ul>
+      </div>
+
+      <!-- Right: Steps card -->
+      <div class="steps-card">
+        <h3>シンプル3ステップ</h3>
+        <div class="step-item">
+          <div class="step-num-badge">01</div>
+          <div>
+            <h4>無料相談</h4>
+            <p>貴社のビジネス目標をお聞きし、最適な進め方をご提案します。まずはお気軽にご連絡ください。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num-badge">02</div>
+          <div>
+            <h4>オーダーメイド提案</h4>
+            <p>登記・ライセンス・セットアップを含む、貴社専用のカスタムプランをご用意します。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num-badge">03</div>
+          <div>
+            <h4>現地実行</h4>
+            <p>現地チームがすべての手続きを担当。貴社はコアビジネスに集中できます。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<div class="cta-band">
+  <div class="container">
+    <h2>フィリピンでビジネスを成長させる<br>準備はできていますか？</h2>
+    <p>初回相談は無料です。スムーズな事業展開をご支援します。</p>
+    <div class="cta-actions">
+      <a href="request.html" class="btn-primary">お問い合わせ</a>
+      <div class="cta-phone">
+        <span>📞</span>03-6823-5140<span>（平日 9:00–17:00）</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo_holdings.webp" alt="Inspire Holdings" class="logo-img logo-img--footer" width="958" height="260" />
+      </a>
+      <p>世界規模の投資・移住という複雑な課題を、ビジネス・個人双方に分かりやすく。Inspire Holdings は日比間をつなぐ総合ソリューション・パートナーです。</p>
+      <p style="margin-top:14px"><a href="request.html" style="color:var(--accent);font-weight:600;letter-spacing:0.15em;font-size:12px">→ REQUEST FORM</a></p>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="company.html">About Us</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="hiring.html">採用情報</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="request.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="business.html">ビジネスサポート</a></li>
+        <li><a href="service.html#general">General Support</a></li>
+        <li><a href="service.html#ecommerce">E-Commerce</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Office</h5>
+      <ul>
+        <li>〒100-0005</li>
+        <li>東京都千代田区<br>丸の内1-8-1</li>
+        <li>Mon - Fri: 9:00 – 18:00</li>
+        <li>03-6823-5140</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inspire Holdings Inc. Co., Ltd. All Rights Reserved.</span>
+    <span><a href="privacy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>
