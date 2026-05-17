@@ -147,6 +147,70 @@
       });
     });
 
+    lazyChart('jpCompaniesChart', function(el){
+      new Chart(el, {
+        type:'bar',
+        data:{
+          labels:['2019','2020','2021','2022','2023','2024','2025(推)'],
+          datasets:[{
+            label:'日系進出企業数（社）',
+            data:[1390,1320,1285,1340,1412,1486,1560],
+            backgroundColor:[TAUPE,TAUPE,TAUPE,TAUPE,GOLD,GOLD,WARM],
+            borderRadius:3, borderWidth:0
+          }]
+        },
+        options:{
+          responsive:true, maintainAspectRatio:false,
+          plugins:{
+            legend:{display:false},
+            tooltip:{callbacks:{label:function(c){return c.parsed.y.toLocaleString()+'社';}}}
+          },
+          scales:{
+            x:{grid:{display:false}},
+            y:{grid:grid, beginAtZero:false, min:1200,
+              ticks:{callback:function(v){return v.toLocaleString();}}}
+          }
+        }
+      });
+    });
+
+    lazyChart('pezaChart', function(el){
+      new Chart(el, {
+        data:{
+          labels:['2019','2020','2021','2022','2023','2024','2025(推)'],
+          datasets:[{
+            type:'bar', label:'PEZA登録外資系企業数（社）',
+            data:[2870,2890,2950,3080,3240,3420,3580],
+            backgroundColor:'rgba(184,148,90,0.55)', borderRadius:3, borderWidth:0, order:2
+          },{
+            type:'line', label:'前年比増加数',
+            data:[null,20,60,130,160,180,160],
+            borderColor:NAVY, backgroundColor:'transparent',
+            tension:0.4, borderWidth:2, pointRadius:3, pointBackgroundColor:NAVY,
+            yAxisID:'y1', order:1
+          }]
+        },
+        options:{
+          responsive:true, maintainAspectRatio:false,
+          plugins:{
+            legend:{position:'bottom', labels:{usePointStyle:true, font:{size:10}}},
+            tooltip:{callbacks:{
+              label:function(c){
+                return c.dataset.label+': '+(c.parsed.y!==null ? c.parsed.y.toLocaleString()+(c.dataset.yAxisID==='y1'?'社増':'社') : '—');
+              }
+            }}
+          },
+          scales:{
+            x:{grid:{display:false}},
+            y:{grid:grid, beginAtZero:false, min:2700,
+              ticks:{callback:function(v){return v.toLocaleString();}}},
+            y1:{position:'right', grid:{display:false}, beginAtZero:true,
+              ticks:{callback:function(v){return '+'+v;}}}
+          }
+        }
+      });
+    });
+
     lazyChart('ecChart', function(el){
       new Chart(el, {
         data:{
