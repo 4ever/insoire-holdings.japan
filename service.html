@@ -126,8 +126,12 @@
     </div>
 
     <!-- ===== BGC / PEZA CALLOUTS ===== -->
-    <div class="callout-grid">
-      <div class="info-callout">
+    <div class="callout-tabs">
+      <div class="tab-nav">
+        <button class="tab-btn active" data-tab="bgc">BGC の優位性</button>
+        <button class="tab-btn tab-btn--green" data-tab="peza">PEZA 優遇制度</button>
+      </div>
+      <div class="tab-panel active" id="callout-bgc">
         <p class="info-callout__tag">BGC（ボニファシオ・グローバル・シティ）の優位性</p>
         <p class="info-callout__body">
           マニラ首都圏タギッグ市に位置するBGCは、フィリピン随一のビジネス&amp;ライフスタイル拠点です。
@@ -141,7 +145,7 @@
           <li>国際学校・日本語対応病院・高品質レジデンスが揃い、駐在員の生活環境も良好</li>
         </ul>
       </div>
-      <div class="info-callout info-callout--green">
+      <div class="tab-panel tab-panel--green" id="callout-peza">
         <p class="info-callout__tag">PEZA（経済区庁）優遇制度の活用</p>
         <p class="info-callout__body">
           フィリピン経済特区庁（PEZA）に登録された企業は、税制・関税・外資規制の面で大きな優遇を受けられます。

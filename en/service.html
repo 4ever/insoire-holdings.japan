@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/img/favicon.png">
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -124,8 +125,12 @@
     </div>
 
     <!-- ===== BGC / PEZA CALLOUTS ===== -->
-    <div class="callout-grid">
-      <div class="info-callout">
+    <div class="callout-tabs">
+      <div class="tab-nav">
+        <button class="tab-btn active" data-tab="bgc">BGC Advantages</button>
+        <button class="tab-btn tab-btn--green" data-tab="peza">PEZA Incentives</button>
+      </div>
+      <div class="tab-panel active" id="callout-bgc">
         <p class="info-callout__tag">BGC (BONIFACIO GLOBAL CITY) ADVANTAGES</p>
         <p class="info-callout__body">
           Located in Taguig City in Metro Manila, BGC is the Philippines' premier business and lifestyle hub.
@@ -139,7 +144,7 @@
           <li>International schools, Japanese-speaking medical clinics, and premium residences for expatriate families</li>
         </ul>
       </div>
-      <div class="info-callout info-callout--green">
+      <div class="tab-panel tab-panel--green" id="callout-peza">
         <p class="info-callout__tag">PEZA (PHILIPPINE ECONOMIC ZONE AUTHORITY) INCENTIVES</p>
         <p class="info-callout__body">
           PEZA-registered companies receive significant advantages in taxation, customs, and foreign ownership rules.

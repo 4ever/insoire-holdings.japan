@@ -65,6 +65,19 @@
     }
   });
 
+  // Callout tabs (BGC / PEZA)
+  document.querySelectorAll('.callout-tabs').forEach(function(tabs){
+    tabs.querySelectorAll('.tab-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        tabs.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+        tabs.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+        btn.classList.add('active');
+        var panel = tabs.querySelector('#callout-' + btn.dataset.tab);
+        if(panel) panel.classList.add('active');
+      });
+    });
+  });
+
   // Sparklines (lightweight, no Chart.js dependency for these)
   function drawSpark(canvas){
     var data = canvas.dataset.spark.split(',').map(parseFloat);
