@@ -1229,6 +1229,46 @@ footer{
   .legal-dl dt:first-child{margin-top:0}
 }
 
+/* ============================================
+   INFO CALLOUT BOXES (BGC / PEZA)
+   ============================================ */
+.callout-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  margin:48px 0;
+}
+@media(max-width:900px){.callout-grid{grid-template-columns:1fr}}
+.info-callout{
+  padding:24px 28px;background:var(--bg-alt);
+  border-radius:4px;border-left:3px solid var(--accent);
+}
+.info-callout--green{border-left-color:#4a7c6f}
+.info-callout__tag{
+  font-size:11px;letter-spacing:0.12em;color:var(--accent);
+  font-weight:700;margin-bottom:10px;
+}
+.info-callout--green .info-callout__tag{color:#4a7c6f}
+.info-callout__body{
+  font-size:13px;line-height:1.85;color:var(--text);margin:0 0 14px;
+}
+.info-callout__list{
+  margin:0;padding-left:18px;font-size:13px;color:var(--text);line-height:2;
+}
+.info-callout__list li{margin-bottom:4px}
+
+/* ============================================
+   DATA CHART GRID (below business block)
+   ============================================ */
+.data-chart-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  margin:0 0 80px;
+}
+@media(max-width:900px){.data-chart-grid{grid-template-columns:1fr}}
+.data-chart-grid .detail-visual{height:320px}
+.data-chart-source{
+  font-size:11px;color:var(--text-light);
+  margin-top:8px;text-align:right;
+}
+
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
 }
