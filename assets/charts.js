@@ -147,69 +147,85 @@
       });
     });
 
-    lazyChart('jpCompaniesChart', function(el){
-      new Chart(el, {
-        type:'bar',
-        data:{
-          labels:['2019','2020','2021','2022','2023','2024','2025(推)'],
-          datasets:[{
-            label:'日系進出企業数（社）',
-            data:[1390,1320,1285,1340,1412,1486,1560],
-            backgroundColor:[TAUPE,TAUPE,TAUPE,TAUPE,GOLD,GOLD,WARM],
-            borderRadius:3, borderWidth:0
-          }]
-        },
-        options:{
-          responsive:true, maintainAspectRatio:false,
-          plugins:{
-            legend:{display:false},
-            tooltip:{callbacks:{label:function(c){return c.parsed.y.toLocaleString()+'社';}}}
-          },
-          scales:{
-            x:{grid:{display:false}},
-            y:{grid:grid, beginAtZero:false, min:1200,
-              ticks:{callback:function(v){return v.toLocaleString();}}}
-          }
-        }
-      });
-    });
-
-    lazyChart('pezaChart', function(el){
-      new Chart(el, {
-        data:{
-          labels:['2019','2020','2021','2022','2023','2024','2025(推)'],
-          datasets:[{
-            type:'bar', label:'PEZA登録外資系企業数（社）',
-            data:[2870,2890,2950,3080,3240,3420,3580],
-            backgroundColor:'rgba(184,148,90,0.55)', borderRadius:3, borderWidth:0, order:2
-          },{
-            type:'line', label:'前年比増加数',
-            data:[null,20,60,130,160,180,160],
-            borderColor:NAVY, backgroundColor:'transparent',
-            tension:0.4, borderWidth:2, pointRadius:3, pointBackgroundColor:NAVY,
-            yAxisID:'y1', order:1
-          }]
-        },
-        options:{
-          responsive:true, maintainAspectRatio:false,
-          plugins:{
-            legend:{position:'bottom', labels:{usePointStyle:true, font:{size:10}}},
-            tooltip:{callbacks:{
-              label:function(c){
-                return c.dataset.label+': '+(c.parsed.y!==null ? c.parsed.y.toLocaleString()+(c.dataset.yAxisID==='y1'?'社増':'社') : '—');
+    // JSON からデータを取得してグラフを描画
+    var DATA_URL = 'assets/data/charts-data.json';
+    fetch(DATA_URL+'?v='+Date.now())
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        lazyChart('jpCompaniesChart', function(el){
+          var jp = d.jpCompanies;
+          var colors = jp.data.map(function(_,i){
+            return (i >= jp.data.length - 2) ? GOLD : TAUPE;
+          });
+          new Chart(el, {
+            type:'bar',
+            data:{
+              labels: jp.labels,
+              datasets:[{
+                label:'日系進出企業数（社）',
+                data: jp.data,
+                backgroundColor: colors,
+                borderRadius:3, borderWidth:0
+              }]
+            },
+            options:{
+              responsive:true, maintainAspectRatio:false,
+              plugins:{
+                legend:{display:false},
+                tooltip:{callbacks:{label:function(c){return c.parsed.y.toLocaleString()+'社';}}}
+              },
+              scales:{
+                x:{grid:{display:false}},
+                y:{grid:grid, beginAtZero:false,
+                  min: Math.floor(Math.min.apply(null, jp.data) * 0.95 / 100) * 100,
+                  ticks:{callback:function(v){return v.toLocaleString();}}}
               }
-            }}
-          },
-          scales:{
-            x:{grid:{display:false}},
-            y:{grid:grid, beginAtZero:false, min:2700,
-              ticks:{callback:function(v){return v.toLocaleString();}}},
-            y1:{position:'right', grid:{display:false}, beginAtZero:true,
-              ticks:{callback:function(v){return '+'+v;}}}
-          }
-        }
+            }
+          });
+        });
+
+        lazyChart('pezaChart', function(el){
+          var pz = d.peza;
+          new Chart(el, {
+            data:{
+              labels: pz.labels,
+              datasets:[{
+                type:'bar', label:'PEZA登録外資系企業数（社）',
+                data: pz.registered,
+                backgroundColor:'rgba(184,148,90,0.55)', borderRadius:3, borderWidth:0, order:2
+              },{
+                type:'line', label:'前年比増加数',
+                data: pz.yoyIncrease,
+                borderColor:NAVY, backgroundColor:'transparent',
+                tension:0.4, borderWidth:2, pointRadius:3, pointBackgroundColor:NAVY,
+                yAxisID:'y1', order:1
+              }]
+            },
+            options:{
+              responsive:true, maintainAspectRatio:false,
+              plugins:{
+                legend:{position:'bottom', labels:{usePointStyle:true, font:{size:10}}},
+                tooltip:{callbacks:{
+                  label:function(c){
+                    return c.dataset.label+': '+(c.parsed.y!==null ? c.parsed.y.toLocaleString()+(c.dataset.yAxisID==='y1'?'社増':'社') : '—');
+                  }
+                }}
+              },
+              scales:{
+                x:{grid:{display:false}},
+                y:{grid:grid, beginAtZero:false,
+                  min: Math.floor(Math.min.apply(null, pz.registered) * 0.95 / 100) * 100,
+                  ticks:{callback:function(v){return v.toLocaleString();}}},
+                y1:{position:'right', grid:{display:false}, beginAtZero:true,
+                  ticks:{callback:function(v){return '+'+v;}}}
+              }
+            }
+          });
+        });
+      })
+      .catch(function(){
+        // フェッチ失敗時はグラフ非表示（エラー表示なし）
       });
-    });
 
     lazyChart('ecChart', function(el){
       new Chart(el, {
