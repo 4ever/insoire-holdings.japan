@@ -1117,7 +1117,7 @@ footer{
   font-size:11px;letter-spacing:0.15em;
   color:var(--text);font-weight:600;
 }
-.request-form .req{color:var(--accent);margin-left:4px}
+.request-form .req{color:var(--accent);margin-left:6px;font-size:10px;font-weight:600;letter-spacing:0.05em}
 .request-form input,
 .request-form select,
 .request-form textarea{

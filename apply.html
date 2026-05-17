@@ -59,23 +59,23 @@
         <span class="section-tag">— APPLICATION FORM</span>
         <h3>応募情報をご記入ください</h3>
         <p class="form-sub">
-          <span class="req">*</span> は必須項目です。ご記入いただいた内容は、採用担当者より1週間以内にご連絡いたします。
+          <span class="req">（必須）</span>と記載の項目は入力必須です。ご記入いただいた内容は、採用担当者より1週間以内にご連絡いたします。
         </p>
 
         <form class="request-form" id="applyForm">
 
           <!-- 氏名 -->
           <div class="form-row">
-            <label>お名前 <span class="req">*</span>
+            <label>お名前 <span class="req">（必須）</span>
               <input type="text" name="name_ja" required placeholder="山田 太郎">
             </label>
-            <label>お名前（ローマ字）<span class="req">*</span>
+            <label>お名前（ローマ字）<span class="req">（必須）</span>
               <input type="text" name="name_en" required placeholder="Taro Yamada">
             </label>
           </div>
 
           <!-- 性別 -->
-          <label>性別 <span class="req">*</span>
+          <label>性別 <span class="req">（必須）</span>
             <div class="radio-row">
               <span><input type="radio" name="gender" value="male" required> 男性</span>
               <span><input type="radio" name="gender" value="female"> 女性</span>
@@ -85,16 +85,16 @@
 
           <!-- 連絡先 -->
           <div class="form-row">
-            <label>メールアドレス <span class="req">*</span>
+            <label>メールアドレス <span class="req">（必須）</span>
               <input type="email" name="email" required placeholder="example@company.jp">
             </label>
-            <label>電話番号（ハイフンなし）<span class="req">*</span>
+            <label>電話番号（ハイフンなし）<span class="req">（必須）</span>
               <input type="tel" name="phone" required placeholder="09012345678">
             </label>
           </div>
 
           <!-- 居住地 -->
-          <label>お住まいの都道府県 <span class="req">*</span>
+          <label>お住まいの都道府県 <span class="req">（必須）</span>
             <select name="prefecture" required>
               <option value="">— 選択してください —</option>
               <option>北海道</option><option>青森</option><option>岩手</option><option>宮城</option><option>秋田</option><option>山形</option><option>福島</option>
@@ -109,7 +109,7 @@
           </label>
 
           <!-- 現在の状況 -->
-          <label>現在のご状況 <span class="req">*</span>
+          <label>現在のご状況 <span class="req">（必須）</span>
             <select name="status" required>
               <option value="">— 選択してください —</option>
               <option>在職中（転職活動中）</option>
@@ -120,7 +120,7 @@
           </label>
 
           <!-- 経験年数 -->
-          <label>営業・コンサルティング経験年数 <span class="req">*</span>
+          <label>営業・コンサルティング経験年数 <span class="req">（必須）</span>
             <select name="experience" required>
               <option value="">— 選択してください —</option>
               <option>1年未満</option>
@@ -133,7 +133,7 @@
 
           <!-- 語学力 -->
           <div class="form-row">
-            <label>英語レベル <span class="req">*</span>
+            <label>英語レベル <span class="req">（必須）</span>
               <select name="english" required>
                 <option value="">— 選択してください —</option>
                 <option>初級（挨拶程度）</option>
@@ -154,7 +154,7 @@
           </div>
 
           <!-- 入社可能時期 -->
-          <label>入社可能時期 <span class="req">*</span>
+          <label>入社可能時期 <span class="req">（必須）</span>
             <select name="start_date" required>
               <option value="">— 選択してください —</option>
               <option>即日〜1ヶ月以内</option>
@@ -166,7 +166,7 @@
           </label>
 
           <!-- 志望動機 -->
-          <label>志望動機 <span class="req">*</span>
+          <label>志望動機 <span class="req">（必須）</span>
             <textarea name="motivation" required placeholder="Inspire Holdings を志望した理由や、これまでの経験・スキルをご記入ください。" style="height:160px"></textarea>
           </label>
 
