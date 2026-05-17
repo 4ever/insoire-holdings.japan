@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>採用情報 | Inspire Holdings Inc.</title>
+<meta name="description" content="Inspire Holdings Inc. の採用情報。日本とフィリピンを繋ぐ営業員を募集しています。" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* ===== HIRING PAGE ===== */
+  .hiring-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 40px;
+    align-items: start;
+  }
+  @media(max-width:900px){ .hiring-layout { grid-template-columns: 1fr; } }
+
+  .hiring-tag-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .hiring-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+  }
+
+  /* Left column blocks */
+  .job-block {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    border: 1px solid #e8e4dc;
+  }
+  .job-block h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .job-block p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text);
+  }
+
+  .duty-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .duty-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid #f0ece4;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .duty-list li:last-child { border-bottom: none; }
+  .duty-list strong {
+    display: block;
+    font-weight: 600;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+
+  .req-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .req-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 14px;
+    color: var(--text);
+    border-bottom: 1px solid #f0ece4;
+  }
+  .req-list li:last-child { border-bottom: none; }
+  .req-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media(max-width:600px){ .benefit-grid { grid-template-columns: 1fr; } }
+  .benefit-card {
+    background: var(--bg-alt);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .benefit-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .benefit-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .benefit-card p {
+    font-size: 12px;
+    color: var(--text-muted, var(--text));
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .apply-steps {
+    counter-reset: step;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .apply-steps li {
+    counter-increment: step;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0ece4;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .apply-steps li:last-child { border-bottom: none; }
+  .apply-steps li::before {
+    content: counter(step, decimal-leading-zero);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+  .apply-steps strong {
+    display: block;
+    font-weight: 600;
+    color: var(--heading);
+    margin-bottom: 3px;
+  }
+
+  /* Right sidebar */
+  .sidebar-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid #e8e4dc;
+    position: sticky;
+    top: 90px;
+  }
+  .sidebar-card h4 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid #f0ece4;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .info-row:last-of-type { border-bottom: none; }
+  .info-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    width: 22px;
+    text-align: center;
+  }
+
+  .apply-cta {
+    background: linear-gradient(135deg, #1a3a6b 0%, #0d2244 100%);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  .apply-cta h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .apply-cta p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  .apply-cta .btn-primary {
+    width: 100%;
+    justify-content: center;
+    display: block;
+    text-align: center;
+  }
+
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .info-table th {
+    text-align: left;
+    color: var(--text);
+    font-weight: 600;
+    padding: 9px 0;
+    border-bottom: 1px solid #f0ece4;
+    white-space: nowrap;
+    width: 90px;
+    vertical-align: top;
+  }
+  .info-table td {
+    color: var(--text);
+    padding: 9px 0 9px 12px;
+    border-bottom: 1px solid #f0ece4;
+    vertical-align: top;
+  }
+  .info-table tr:last-child th,
+  .info-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/img/ihilogo.webp" alt="Inspire Holdings" class="logo-img logo-img--header" width="128" height="36" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="company.html">COMPANY</a>
+      <a href="service.html">SERVICE</a>
+      <a href="request.html">CONTACT</a>
+      <span class="lang"><a href="en/hiring.html">EN</a> <span class="sep">|</span> <a class="active">日本語</a></span>
+      <a href="request.html" class="cta-btn">REQUEST INFO</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="menu">≡</button>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a><span class="sep">/</span><span>採用情報</span>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <span class="hiring-tag" style="border-color:rgba(255,255,255,0.5);color:rgba(255,255,255,0.85);font-size:11px;padding:3px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.5)">求人情報</span>
+      <span class="hiring-tag" style="border-color:rgba(255,255,255,0.5);color:rgba(255,255,255,0.85);font-size:11px;padding:3px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.5)">正社員</span>
+    </div>
+    <h1 class="page-hero-title">営業員</h1>
+    <p class="page-hero-sub">
+      日本とフィリピンの架け橋として、書類処理・相談業務をサポートし、<br>新規事業の発展をご担当いただける方を募集しています。
+    </p>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<section class="section section-light">
+  <div class="container">
+
+    <div class="hiring-tag-row">
+      <span class="hiring-tag">不動産仲介</span>
+      <span class="hiring-tag">企業様・個人</span>
+      <span class="hiring-tag">求人・採用情報</span>
+      <span class="hiring-tag">東南アジア・海外販売</span>
+    </div>
+
+    <div class="hiring-layout">
+
+      <!-- ===== LEFT COLUMN ===== -->
+      <div>
+
+        <!-- お仕事内容 -->
+        <div class="job-block">
+          <h3>お仕事内容</h3>
+          <p>
+            Inspire Holdings は、日本とフィリピンを繋ぐ総合コンサルティング企業です。不動産投資・法人設立・ITシステム・ライフスタイル移住まで、幅広い領域でクライアントをサポートしています。<br><br>
+            今回募集する営業員は、日本人クライアントとフィリピン現地スタッフの橋渡しとして、初回相談から契約・アフターフォローまでを一貫して担っていただきます。営業経験はもちろん、異文化への興味・語学力を活かして活躍できるポジションです。
+          </p>
+        </div>
+
+        <!-- 主な職務内容 -->
+        <div class="job-block">
+          <h3>主な職務内容</h3>
+          <ul class="duty-list">
+            <li>
+              <strong>コース手配・提案</strong>
+              クライアントのニーズをヒアリングし、不動産・ビザ・法人設立などの最適なプランを提案・手配します。
+            </li>
+            <li>
+              <strong>業務調整・折衝</strong>
+              フィリピン現地スタッフ・弁護士・不動産エージェントとの調整業務。スムーズな進行を管理します。
+            </li>
+            <li>
+              <strong>書類作成補助</strong>
+              契約書・申請書類・報告書などの作成・翻訳補助。正確な書類処理でクライアントをサポートします。
+            </li>
+            <li>
+              <strong>CRM・報告管理</strong>
+              顧客情報の管理・進捗報告・社内ミーティングへの参加。データに基づいた営業活動を実践します。
+            </li>
+          </ul>
+        </div>
+
+        <!-- 求める人材 -->
+        <div class="job-block">
+          <h3>求める人材</h3>
+          <ul class="req-list">
+            <li>フィリピンのビジネス環境・不動産市場への興味・知識がある方</li>
+            <li>英語またはタガログ語でのコミュニケーションが可能な方（日常会話以上）</li>
+            <li>営業・コンサルティング・不動産関連の経験が3年以上ある方</li>
+            <li>セールスフォース・HubSpot等のCRMツールを使用した経験がある方</li>
+            <li>多様な文化背景を持つチームで協調して働ける方</li>
+            <li>海外出張・フィリピン現地出張が可能な方（年数回程度）</li>
+          </ul>
+        </div>
+
+        <!-- 待遇内容 -->
+        <div class="job-block">
+          <h3>待遇内容</h3>
+          <div class="benefit-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🏢</div>
+              <div>
+                <h4>新会社へのキャリア</h4>
+                <p>成長中のグローバル企業で、キャリアの幅を広げられる環境です。</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">💻</div>
+              <div>
+                <h4>ハイブリッドワーク</h4>
+                <p>リモートと出社を組み合わせた柔軟な働き方を導入しています。</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🌏</div>
+              <div>
+                <h4>フィリピン現地経験</h4>
+                <p>定期的な現地出張でフィリピンビジネスの最前線を経験できます。</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📈</div>
+              <div>
+                <h4>キャリアサポート</h4>
+                <p>社内研修・資格取得支援制度により、継続的な成長をサポートします。</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🗣️</div>
+              <div>
+                <h4>語学研修</h4>
+                <p>英語・タガログ語の語学研修プログラムをご用意しています。</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">✈️</div>
+              <div>
+                <h4>海外手当</h4>
+                <p>出張手当・交通費全額支給・海外赴任時の各種サポートあり。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 応募方法 -->
+        <div class="job-block">
+          <h3>応募方法</h3>
+          <ol class="apply-steps">
+            <li>
+              <div>
+                <strong>フォームから応募</strong>
+                このページ右側の「お申込みフォームへ」ボタン、またはページ下部のボタンから応募フォームにアクセスしてください。
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>書類選考</strong>
+                ご応募いただいた内容をもとに、担当者が書類選考を行います。結果は1週間以内にメールにてご連絡いたします。
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>面接（1〜2回）</strong>
+                書類選考通過後、オンラインまたは対面での面接を実施します。日程はご都合に合わせて調整いたします。
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>内定・入社</strong>
+                最終選考通過後、内定のご連絡をいたします。入社日についてはご相談のうえ決定いたします。
+              </div>
+            </li>
+          </ol>
+        </div>
+
+      </div><!-- /left column -->
+
+      <!-- ===== RIGHT SIDEBAR ===== -->
+      <div>
+
+        <!-- 基本情報 -->
+        <div class="sidebar-card">
+          <h4>基本情報</h4>
+          <div class="info-row">
+            <span class="info-icon">✉️</span>
+            <span>contact@inspire-holdings.co.jp</span>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">📍</span>
+            <span>東京都千代田区、日本</span>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">💼</span>
+            <span>経験年数：3〜5年</span>
+          </div>
+          <div class="info-row">
+            <span class="info-icon">🏢</span>
+            <span>Inspire Holdings 株式会社</span>
+          </div>
+        </div>
+
+        <!-- Apply CTA -->
+        <div class="apply-cta">
+          <h4>Inspire Holdings Inc.</h4>
+          <p>ご興味をお持ちの方は、お気軽に応募フォームよりご連絡ください。初回のご相談は無料です。</p>
+          <a href="request.html" class="btn-primary">お申込みフォームへ →</a>
+        </div>
+
+        <!-- Inspire Holdingsからのフォロー -->
+        <div class="sidebar-card">
+          <h4>Inspire Holdings からのフォロー</h4>
+          <p style="font-size:13px;line-height:1.8;color:var(--text)">
+            ご応募いただいた後も、専任の採用担当がしっかりとサポートします。選考プロセス中のご質問や不安な点は、いつでもお気軽にお問い合わせください。
+          </p>
+        </div>
+
+        <!-- 雇用条件テーブル -->
+        <div class="sidebar-card">
+          <h4>雇用条件</h4>
+          <table class="info-table">
+            <tr>
+              <th>雇用形態</th>
+              <td>正社員</td>
+            </tr>
+            <tr>
+              <th>ポジション</th>
+              <td>営業員</td>
+            </tr>
+            <tr>
+              <th>給与</th>
+              <td>経験・能力により応相談</td>
+            </tr>
+            <tr>
+              <th>勤務地</th>
+              <td>東京都千代田区丸の内</td>
+            </tr>
+            <tr>
+              <th>勤務時間</th>
+              <td>9:00 〜 18:00<br><span style="font-size:12px;color:#888">（土日祝休）</span></td>
+            </tr>
+          </table>
+        </div>
+
+      </div><!-- /sidebar -->
+
+    </div><!-- /hiring-layout -->
+
+    <!-- Bottom CTA -->
+    <div style="text-align:center;margin-top:48px;padding:40px;background:#fff;border-radius:12px;border:1px solid #e8e4dc">
+      <p class="section-tag">— JOIN OUR TEAM</p>
+      <h2 style="font-size:24px;margin:12px 0 8px">一緒に、日比間の架け橋になりませんか。</h2>
+      <p style="color:var(--text);font-size:14px;margin-bottom:24px;line-height:1.8">
+        Inspire Holdings は現在も成長中のチームです。フィリピンと日本を繋ぐ仕事に<br>情熱をお持ちの方からのご応募をお待ちしています。
+      </p>
+      <a href="request.html" class="btn-primary">応募する →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo_holdings.webp" alt="Inspire Holdings" class="logo-img logo-img--footer" width="958" height="260" />
+      </a>
+      <p>世界規模の投資・移住という複雑な課題を、ビジネス・個人双方に分かりやすく。Inspire Holdings は日比間をつなぐ総合ソリューション・パートナーです。</p>
+      <p style="margin-top:14px"><a href="request.html" style="color:var(--accent);font-weight:600;letter-spacing:0.15em;font-size:12px">→ REQUEST FORM</a></p>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="company.html">About Us</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="hiring.html">採用情報</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="request.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="service.html#business">Business Related</a></li>
+        <li><a href="service.html#general">General Support</a></li>
+        <li><a href="service.html#ecommerce">E-Commerce</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Office</h5>
+      <ul>
+        <li>〒100-0005</li>
+        <li>東京都千代田区<br>丸の内1-8-1</li>
+        <li>Mon - Fri: 9:00 – 18:00</li>
+        <li>03-6823-5140</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inspire Holdings Inc. Co., Ltd. All Rights Reserved.</span>
+    <span><a href="privacy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>
