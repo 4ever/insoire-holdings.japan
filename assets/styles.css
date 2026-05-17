@@ -110,6 +110,7 @@ button{font-family:inherit;cursor:pointer}
 .cta-btn:hover{
   background:var(--accent);border-color:var(--accent);color:#ffffff;
 }
+.nav-links > a.cta-btn{color:#ffffff;}
 .menu-btn{
   display:none;
   background:var(--bg-dark);
