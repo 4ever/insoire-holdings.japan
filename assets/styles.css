@@ -1113,7 +1113,7 @@ footer{
 .request-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:600px){.request-form .form-row{grid-template-columns:1fr}}
 .request-form label{
-  display:flex;flex-direction:column;gap:6px;
+  display:block;
   font-size:11px;letter-spacing:0.15em;
   color:var(--text);font-weight:600;
 }
@@ -1121,6 +1121,7 @@ footer{
 .request-form input,
 .request-form select,
 .request-form textarea{
+  display:block;width:100%;margin-top:6px;
   background:#fbf8f3;
   border:1px solid var(--line);
   padding:12px 14px;border-radius:2px;
