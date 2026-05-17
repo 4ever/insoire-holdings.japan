@@ -72,7 +72,7 @@
         tabs.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
         tabs.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
         btn.classList.add('active');
-        var panel = tabs.querySelector('#callout-' + btn.dataset.tab);
+        var panel = document.getElementById('callout-' + btn.dataset.tab);
         if(panel) panel.classList.add('active');
       });
     });
