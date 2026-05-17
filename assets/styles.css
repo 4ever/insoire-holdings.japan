@@ -998,10 +998,35 @@ footer{
   color:var(--bg-dark);line-height:1.4;margin-bottom:10px;
 }
 .expertise-card p{font-size:13px;color:var(--text-dim);line-height:1.85}
+.expertise-card .exp-detail{
+  margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);
+  font-size:12px;color:var(--accent);font-weight:600;letter-spacing:0.05em;
+}
+
+/* ============================================
+   STATS BAND
+   ============================================ */
+.stats-band{background:var(--bg-dark);padding:64px 32px;}
+.stats-inner{
+  max-width:860px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;
+}
+@media(max-width:700px){.stats-inner{grid-template-columns:repeat(2,1fr);gap:32px}}
+.stat-num{
+  font-family:var(--serif);font-size:clamp(42px,5vw,64px);
+  font-weight:700;color:var(--accent);line-height:1;margin-bottom:10px;
+}
+.stat-label{font-size:11px;letter-spacing:0.2em;color:rgba(255,255,255,0.55);text-transform:uppercase;}
+.stat-sub{font-size:12px;color:rgba(255,255,255,0.35);margin-top:4px;}
 
 /* ============================================
    BUSINESS DESCRIPTION LIST (numbered)
    ============================================ */
+.biz-cat{
+  display:inline-block;font-size:9px;letter-spacing:0.2em;font-weight:700;
+  color:var(--accent);border:1px solid var(--accent);
+  padding:2px 8px;border-radius:2px;margin-bottom:8px;
+}
 .biz-list{
   background:#fff;border:1px solid var(--line);
   padding:36px;border-radius:4px;
