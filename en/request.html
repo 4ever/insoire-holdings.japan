@@ -75,13 +75,17 @@
           We will respond to your inquiry within 2 business days.
         </p>
 
-        <form class="request-form" id="requestForm">
+        <form class="request-form" id="requestForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="1265bd00-224b-4008-98bc-166ab6ac9052">
+          <input type="hidden" name="subject" value="[Inspire Holdings] New inquiry received">
+          <input type="hidden" name="from_name" value="Inspire Holdings Website (EN)">
+          <input type="hidden" name="redirect" value="false">
           <div class="form-row">
             <label>Your name <span class="req">*</span>
-              <input type="text" required placeholder="Taro Yamada">
+              <input type="text" name="name_ja" required placeholder="Taro Yamada">
             </label>
             <label>Your name (in Roman letters) <span class="req">*</span>
-              <input type="text" required placeholder="Taro Yamada">
+              <input type="text" name="name_en" required placeholder="Taro Yamada">
             </label>
           </div>
 
@@ -94,7 +98,7 @@
           </label>
 
           <label>Prefecture
-            <select>
+            <select name="prefecture">
               <option value="">— Your area —</option>
               <option>Hokkaido</option><option>Aomori</option><option>Iwate</option><option>Miyagi</option><option>Akita</option><option>Yamagata</option><option>Fukushima</option>
               <option>Ibaraki</option><option>Tochigi</option><option>Gunma</option><option>Saitama</option><option>Chiba</option><option>Tokyo</option><option>Kanagawa</option>
@@ -109,15 +113,15 @@
 
           <div class="form-row">
             <label>Email address <span class="req">*</span>
-              <input type="email" required placeholder="example@company.com">
+              <input type="email" name="email" required placeholder="example@company.com">
             </label>
             <label>Phone number (without hyphens)
-              <input type="tel" placeholder="09012345678">
+              <input type="tel" name="phone" placeholder="09012345678">
             </label>
           </div>
 
           <label>What are your interests? <span class="req">*</span>
-            <select required>
+            <select name="interest" required>
               <option value="">— choose —</option>
               <option>Philippine Real Estate</option>
               <option>Opening a Bank Account</option>
@@ -131,7 +135,7 @@
           </label>
 
           <label>Questions, etc.
-            <textarea placeholder="Please feel free to ask anything"></textarea>
+            <textarea name="message" placeholder="Please feel free to ask anything"></textarea>
           </label>
 
           <button type="submit" class="btn-primary">Send Request</button>

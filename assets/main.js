@@ -49,20 +49,37 @@
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
 
-  // Contact / Request form
+  // Contact / Request form — Web3Forms
   var lang = (document.documentElement.lang || 'ja').toLowerCase().indexOf('en') === 0 ? 'en' : 'ja';
   var thanksMsg = lang === 'en'
     ? 'Thank you for your inquiry. Our team will contact you within 2 business days.'
     : 'お問い合わせありがとうございます。担当より2営業日以内にご連絡いたします。';
+  var errMsg = lang === 'en'
+    ? 'Sorry, something went wrong. Please try again or contact us by phone.'
+    : '送信に失敗しました。お手数ですが再度お試しいただくか、お電話でご連絡ください。';
   ['contactForm','requestForm'].forEach(function(id){
     var f = document.getElementById(id);
-    if(f){
-      f.addEventListener('submit', function(e){
-        e.preventDefault();
-        alert(thanksMsg);
-        f.reset();
+    if(!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = f.querySelector('button[type="submit"]');
+      var origText = btn ? btn.textContent : '';
+      if(btn){ btn.disabled = true; btn.textContent = lang === 'en' ? 'Sending…' : '送信中…'; }
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(f)
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if(btn){ btn.disabled = false; btn.textContent = origText; }
+        if(d.success){ alert(thanksMsg); f.reset(); }
+        else { alert(errMsg); }
+      })
+      .catch(function(){
+        if(btn){ btn.disabled = false; btn.textContent = origText; }
+        alert(errMsg);
       });
-    }
+    });
   });
 
   // Callout tabs (BGC / PEZA)
