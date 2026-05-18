@@ -696,8 +696,12 @@ footer{
   background-repeat:no-repeat;
 }
 .page-hero .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,24,34,0.7) 0%,rgba(15,24,34,0.3) 100%)}
-.page-hero--hiring .hero-bg{background-image:url("img/hero-hiring.jpg"),linear-gradient(135deg,#2a3a52 0%,#1a2332 100%)}
-.page-hero--company .hero-bg{background-image:url("img/hero-company.jpg"),linear-gradient(135deg,#2a3a52 0%,#1a2332 100%)}
+.page-hero--hiring .hero-bg  {background-image:url("img/hero-hiring.jpg"),  linear-gradient(135deg,#2a3a52 0%,#1a2332 100%)}
+.page-hero--company .hero-bg {background-image:url("img/hero-company.jpg"), linear-gradient(135deg,#2a3a52 0%,#1a2332 100%)}
+.page-hero--service .hero-bg {background-image:url("img/hero-service.jpg"), linear-gradient(135deg,#2a3a52 0%,#1a2332 100%)}
+.page-hero--request .hero-bg {background-image:url("img/hero-request.jpg"), linear-gradient(135deg,#2a3a52 0%,#1a2332 100%)}
+.page-hero--business .hero-bg{background-image:url("img/hero-business.jpg"),linear-gradient(135deg,#2a3a52 0%,#1a2332 100%)}
+.page-hero--apply .hero-bg   {background-image:url("img/hero-apply.jpg"),   linear-gradient(135deg,#2a3a52 0%,#1a2332 100%)}
 .page-hero-content{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;width:100%;color:var(--text-on-dark)}
 .page-hero-title{
   font-family:var(--serif);
