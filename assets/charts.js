@@ -148,10 +148,10 @@
     });
 
     // JSON からデータを取得してグラフを描画（en/ サブディレクトリからも動作）
+    // sessionStorage にキャッシュして同一セッション内の再フェッチを防ぐ
     var DATA_URL = (document.documentElement.lang === 'en' ? '../' : '') + 'assets/data/charts-data.json';
-    fetch(DATA_URL+'?v='+Date.now())
-      .then(function(r){ return r.json(); })
-      .then(function(d){
+    var CACHE_KEY = 'ihi_charts_v3';
+    function renderWithData(d){
         lazyChart('phAgeChart', function(el){
           var ag = d.phAge;
           new Chart(el, {
@@ -280,7 +280,7 @@
             }
           });
         });
-      })
+
         lazyChart('phFDIChart', function(el){
           var fd = d.phFDI;
           var colors = fd.data.map(function(_,i){
@@ -400,10 +400,25 @@
             }
           });
         });
-      })
-      .catch(function(){
-        // フェッチ失敗時はグラフ非表示（エラー表示なし）
-      });
+    }
+    try {
+      var _c = sessionStorage.getItem(CACHE_KEY);
+      if (_c) { renderWithData(JSON.parse(_c)); }
+      else {
+        fetch(DATA_URL)
+          .then(function(r){ return r.json(); })
+          .then(function(d){
+            try { sessionStorage.setItem(CACHE_KEY, JSON.stringify(d)); } catch(e){}
+            renderWithData(d);
+          })
+          .catch(function(){});
+      }
+    } catch(e) {
+      fetch(DATA_URL)
+        .then(function(r){ return r.json(); })
+        .then(renderWithData)
+        .catch(function(){});
+    }
 
     lazyChart('ecChart', function(el){
       new Chart(el, {
