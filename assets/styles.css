@@ -746,9 +746,9 @@ footer{
   background-size:cover;background-position:center;background-repeat:no-repeat;
   position:relative;overflow:hidden;
 }
-.svc-teaser-img.svc-img-business { background-image:url("img/svc-business.svg"); }
-.svc-teaser-img.svc-img-general  { background-image:url("img/svc-general.svg"); }
-.svc-teaser-img.svc-img-ecommerce{ background-image:url("img/svc-ecommerce.svg"); }
+.svc-teaser-img.svc-img-business { background-image:url("img/svc-business.jpg"); }
+.svc-teaser-img.svc-img-general  { background-image:url("img/svc-general.jpg"); }
+.svc-teaser-img.svc-img-ecommerce{ background-image:url("img/svc-ecommerce.jpg"); }
 .svc-teaser-img .svc-icon{ display:none }
 .svc-teaser-body{padding:28px 28px 32px;display:flex;flex-direction:column;flex:1}
 .svc-teaser-tag{
@@ -786,9 +786,9 @@ footer{
   background-color:#1a2332;
   border-bottom:1px solid rgba(184,148,90,0.25);
 }
-.highlight-thumb.hl-support  { background-image:url("img/hl-support.svg"); }
-.highlight-thumb.hl-loopwork { background-image:url("img/hl-loopwork.svg"); }
-.highlight-thumb.hl-hiring   { background-image:url("img/hl-hiring.svg"); }
+.highlight-thumb.hl-support  { background-image:url("img/hl-support.jpg"); }
+.highlight-thumb.hl-loopwork { background-image:url("img/hl-loopwork.png"); }
+.highlight-thumb.hl-hiring   { background-image:url("img/hl-hiring.jpg"); }
 .highlight-body{padding:28px 32px 32px;display:flex;flex-direction:column;flex:1}
 .highlight-tile .ht-tag{
   font-size:10px;letter-spacing:0.25em;
