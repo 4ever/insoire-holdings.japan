@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://4ever.github.io/insoire-holdings.japan/sitemap.xml
