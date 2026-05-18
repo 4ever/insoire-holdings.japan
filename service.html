@@ -170,138 +170,14 @@
       </div>
     </div>
 
-    <!-- ===== BUSINESS DATA CHARTS ===== -->
-    <div class="data-chart-grid">
-      <div class="detail-visual">
-        <div class="visual-head">
-          <h4>日系企業 フィリピン進出数推移</h4>
-          <span class="badge">JETRO 参考</span>
-        </div>
-        <div class="chart-wrap"><canvas id="jpCompaniesChart"></canvas></div>
-        <p class="data-chart-source">出典：JETRO 海外進出日系企業実態調査（参考値）</p>
+    <!-- ECONOMY DATA LINK -->
+    <div class="eco-link-banner">
+      <div>
+        <span class="section-tag">— MARKET INSIGHT</span>
+        <h4>フィリピン経済動向 詳細データ</h4>
+        <p>人口・年齢分布・GDP成長率・FDI・地域別外資進出状況など、フィリピン市場の詳細データをご覧いただけます。</p>
       </div>
-      <div class="detail-visual">
-        <div class="visual-head">
-          <h4>PEZA 登録外資系企業数推移</h4>
-          <span class="badge">PEZA 参考</span>
-        </div>
-        <div class="chart-wrap"><canvas id="pezaChart"></canvas></div>
-        <p class="data-chart-source">出典：PEZA Annual Report（参考値）</p>
-      </div>
-    </div>
-
-    <!-- ===== PHILIPPINES MACRO ECONOMIC DATA ===== -->
-    <div style="margin:60px 0 28px;padding-top:40px;border-top:1px solid rgba(0,0,0,0.08)">
-      <span class="section-tag">— MARKET DATA</span>
-      <h4 style="font-size:18px;margin:10px 0 6px;color:var(--bg-dark)">フィリピン マクロ経済データ</h4>
-      <p style="font-size:14px;color:#777;margin:0">フィリピンへの外国直接投資と主要外貨収益の推移。海外進出判断の参考にご活用ください。</p>
-    </div>
-    <div class="data-chart-grid">
-      <div class="detail-visual">
-        <div class="visual-head">
-          <h4>外国直接投資（FDI）推移</h4>
-          <span class="badge">BSP 参考</span>
-        </div>
-        <div class="chart-wrap"><canvas id="phFDIChart"></canvas></div>
-        <p class="data-chart-source">出典：BSP / UNCTAD（参考値、単位：億USD）</p>
-      </div>
-      <div class="detail-visual">
-        <div class="visual-head">
-          <h4>国別 対フィリピン投資シェア（2024年）</h4>
-          <span class="badge">BSP 参考</span>
-        </div>
-        <div class="chart-wrap"><canvas id="phFDIByCountryChart"></canvas></div>
-        <p class="data-chart-source">出典：BSP（参考値）</p>
-      </div>
-    </div>
-    <div class="data-chart-grid data-chart-grid--wide">
-      <div class="detail-visual">
-        <div class="visual-head">
-          <h4>主要外貨収益源 実績（2024）vs 目標（2025）</h4>
-          <span class="badge">BSP / NEDA 参考</span>
-        </div>
-        <div class="chart-wrap"><canvas id="phForexChart"></canvas></div>
-        <p class="data-chart-source">出典：BSP / NEDA（参考値、単位：億USD）</p>
-      </div>
-    </div>
-
-    <!-- ===== PHILIPPINES REGIONAL MAP ===== -->
-    <div style="margin:60px 0 28px;padding-top:40px;border-top:1px solid rgba(0,0,0,0.08)">
-      <span class="section-tag">— REGIONAL DATA</span>
-      <h4 style="font-size:18px;margin:10px 0 6px;color:var(--bg-dark)">地域別・国籍別 外国企業進出状況</h4>
-      <p style="font-size:14px;color:#777;margin:0">フィリピン主要地域への外国企業進出数（国籍別内訳）。円の大きさが企業数を表します。</p>
-    </div>
-    <div class="ph-region-layout">
-
-      <!-- MAP CARD -->
-      <div class="ph-map-card">
-        <div class="visual-head">
-          <h4>主要投資地域マップ</h4>
-          <span class="badge">参考</span>
-        </div>
-        <svg viewBox="0 0 280 520" xmlns="http://www.w3.org/2000/svg" aria-label="フィリピン投資地域マップ">
-          <rect width="280" height="520" fill="#daeef5" rx="6"/>
-          <!-- Luzon (with Bicol Peninsula) -->
-          <path fill="#e8ddd0" stroke="#c0a070" stroke-width="0.8" d="M 136,22 L 155,100 L 153,163 L 178,210 L 192,226 L 201,251 L 195,273 L 173,265 L 147,248 L 122,239 L 113,219 L 102,163 L 102,116 L 108,94 L 119,54 Z"/>
-          <!-- Mindoro -->
-          <path fill="#e8ddd0" stroke="#c0a070" stroke-width="0.8" d="M 110,248 L 122,254 L 132,272 L 120,282 L 102,278 Z"/>
-          <!-- Palawan -->
-          <path fill="#e8ddd0" stroke="#c0a070" stroke-width="0.8" d="M 93,263 L 100,270 L 88,295 L 72,328 L 55,368 L 30,405 L 10,422 L 5,415 L 24,395 L 50,355 L 66,320 L 80,285 L 87,258 Z"/>
-          <!-- Panay -->
-          <path fill="#e8ddd0" stroke="#c0a070" stroke-width="0.8" d="M 144,292 L 178,295 L 170,335 L 148,328 Z"/>
-          <!-- Negros -->
-          <path fill="#e8ddd0" stroke="#c0a070" stroke-width="0.8" d="M 185,316 L 192,340 L 178,375 L 164,365 L 165,328 Z"/>
-          <!-- Cebu -->
-          <path fill="#e8ddd0" stroke="#c0a070" stroke-width="0.8" d="M 200,310 L 207,318 L 206,360 L 198,368 L 192,355 L 194,315 Z"/>
-          <!-- Bohol -->
-          <path fill="#e8ddd0" stroke="#c0a070" stroke-width="0.8" d="M 200,344 L 222,340 L 226,354 L 214,362 L 200,356 Z"/>
-          <!-- Leyte -->
-          <path fill="#e8ddd0" stroke="#c0a070" stroke-width="0.8" d="M 224,295 L 244,305 L 248,330 L 236,344 L 224,335 Z"/>
-          <!-- Samar -->
-          <path fill="#e8ddd0" stroke="#c0a070" stroke-width="0.8" d="M 224,270 L 248,268 L 252,290 L 244,305 L 224,295 Z"/>
-          <!-- Mindanao -->
-          <path fill="#e8ddd0" stroke="#c0a070" stroke-width="0.8" d="M 153,450 L 201,398 L 226,392 L 249,357 L 257,414 L 249,445 L 235,473 L 221,461 L 192,461 L 178,442 Z"/>
-          <!-- NCR 1400社 r=16 -->
-          <circle cx="116" cy="210" r="16" fill="#1a2332" opacity="0.9"/>
-          <text x="116" y="210" text-anchor="middle" dominant-baseline="central" fill="white" font-size="7.5" font-weight="bold" font-family="'Noto Sans JP',sans-serif">NCR</text>
-          <!-- Central Luzon (III) 500社 r=10 -->
-          <circle cx="108" cy="172" r="10" fill="#2a3a52" opacity="0.88"/>
-          <text x="108" y="172" text-anchor="middle" dominant-baseline="central" fill="white" font-size="6.5" font-family="sans-serif">III</text>
-          <!-- CALABARZON (IV-A) 800社 r=12 -->
-          <circle cx="142" cy="234" r="12" fill="#b8945a" opacity="0.9"/>
-          <text x="142" y="234" text-anchor="middle" dominant-baseline="central" fill="white" font-size="6" font-family="sans-serif">IV-A</text>
-          <!-- Western Visayas (VI) 220社 r=6 -->
-          <circle cx="157" cy="318" r="6" fill="#7a6a52" opacity="0.88"/>
-          <text x="157" y="318" text-anchor="middle" dominant-baseline="central" fill="white" font-size="5" font-family="sans-serif">VI</text>
-          <!-- Central Visayas / Cebu (VII) 380社 r=8 -->
-          <circle cx="199" cy="338" r="8" fill="#c9a96e" opacity="0.9"/>
-          <text x="199" y="338" text-anchor="middle" dominant-baseline="central" fill="white" font-size="5.5" font-family="sans-serif">VII</text>
-          <!-- Davao (XI) 200社 r=6 -->
-          <circle cx="228" cy="440" r="6" fill="#8b6f3e" opacity="0.88"/>
-          <text x="228" y="440" text-anchor="middle" dominant-baseline="central" fill="white" font-size="5" font-family="sans-serif">XI</text>
-          <!-- North indicator -->
-          <text x="266" y="22" text-anchor="end" fill="#7aabbc" font-size="9" font-family="sans-serif">N ↑</text>
-        </svg>
-        <div class="ph-map-legend">
-          <div class="ph-legend-item"><span class="ph-legend-dot" style="background:#1a2332;width:12px;height:12px"></span>NCR 1,400社</div>
-          <div class="ph-legend-item"><span class="ph-legend-dot" style="background:#b8945a;width:10px;height:10px"></span>IV-A 800社</div>
-          <div class="ph-legend-item"><span class="ph-legend-dot" style="background:#2a3a52;width:8px;height:8px"></span>III 500社</div>
-          <div class="ph-legend-item"><span class="ph-legend-dot" style="background:#c9a96e;width:7px;height:7px"></span>VII 380社</div>
-          <div class="ph-legend-item"><span class="ph-legend-dot" style="background:#7a6a52;width:5px;height:5px"></span>VI 220社</div>
-          <div class="ph-legend-item"><span class="ph-legend-dot" style="background:#8b6f3e;width:5px;height:5px"></span>XI 200社</div>
-        </div>
-      </div>
-
-      <!-- STACKED BAR CHART -->
-      <div class="detail-visual" style="height:auto">
-        <div class="visual-head">
-          <h4>主要地域別 外国企業数（国籍別）</h4>
-          <span class="badge">参考値</span>
-        </div>
-        <div class="chart-wrap" style="height:380px"><canvas id="phRegionsChart"></canvas></div>
-        <p class="data-chart-source">出典：PSA / PEZA / BOI（参考値）</p>
-      </div>
-
+      <a href="ph-economy.html" class="btn-primary" style="white-space:nowrap;flex-shrink:0">データを見る →</a>
     </div>
 
     <div class="detail-block reverse" id="general">

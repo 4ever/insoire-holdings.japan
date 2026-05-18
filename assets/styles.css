@@ -1313,6 +1313,16 @@ footer{
 .data-chart-grid .detail-visual{height:320px}
 .data-chart-grid--wide{grid-template-columns:1fr;margin-bottom:80px}
 .data-chart-grid--wide .detail-visual{height:280px}
+.page-hero--economy .hero-bg{background-image:url("img/hero-business.jpg"),linear-gradient(135deg,#2a3a52 0%,#1a2332 100%)}
+.eco-link-banner{
+  background:var(--bg-dark,#1a2332);border-radius:8px;
+  padding:28px 36px;display:flex;align-items:center;
+  justify-content:space-between;gap:24px;margin:32px 0 72px;
+}
+.eco-link-banner .section-tag{color:rgba(184,148,90,0.85);display:block;margin-bottom:6px}
+.eco-link-banner h4{font-size:17px;color:#fff;margin:0 0 6px;font-family:var(--serif)}
+.eco-link-banner p{font-size:13px;color:rgba(255,255,255,0.6);margin:0}
+@media(max-width:768px){.eco-link-banner{flex-direction:column}}
 .ph-region-layout{display:grid;grid-template-columns:300px 1fr;gap:24px;margin-bottom:80px;align-items:start}
 @media(max-width:1000px){.ph-region-layout{grid-template-columns:1fr}}
 .ph-map-card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:24px}

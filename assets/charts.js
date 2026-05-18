@@ -152,6 +152,64 @@
     fetch(DATA_URL+'?v='+Date.now())
       .then(function(r){ return r.json(); })
       .then(function(d){
+        lazyChart('phAgeChart', function(el){
+          var ag = d.phAge;
+          new Chart(el, {
+            type:'bar',
+            data:{
+              labels: isEN ? ag.labelsEN : ag.labels,
+              datasets:[{
+                label: isEN ? 'Population %' : '人口比率 %',
+                data: ag.data,
+                backgroundColor:[NAVY,NAVY_S,GOLD,GOLD_D,WARM,TAUPE,'#d4c4a4'],
+                borderRadius:3, borderWidth:0
+              }]
+            },
+            options:{
+              indexAxis:'y', responsive:true, maintainAspectRatio:false,
+              plugins:{
+                legend:{display:false},
+                tooltip:{callbacks:{label:function(c){return c.parsed.x+'%';}}}
+              },
+              scales:{
+                x:{grid:grid, beginAtZero:true, max:35,
+                  ticks:{callback:function(v){return v+'%';}}},
+                y:{grid:{display:false}, ticks:{font:{size:10}}}
+              }
+            }
+          });
+        });
+
+        lazyChart('phGDPChart', function(el){
+          var gd = d.phGDP;
+          var colors = gd.data.map(function(v){
+            return v < 0 ? '#c0392b' : (v >= 7 ? GOLD : NAVY_S);
+          });
+          new Chart(el, {
+            type:'bar',
+            data:{
+              labels: gd.labels,
+              datasets:[{
+                label: isEN ? 'Real GDP Growth %' : '実質GDP成長率 %',
+                data: gd.data,
+                backgroundColor: colors,
+                borderRadius:3, borderWidth:0
+              }]
+            },
+            options:{
+              responsive:true, maintainAspectRatio:false,
+              plugins:{
+                legend:{display:false},
+                tooltip:{callbacks:{label:function(c){return c.parsed.y+'%';}}}
+              },
+              scales:{
+                x:{grid:{display:false}},
+                y:{grid:grid, ticks:{callback:function(v){return v+'%';}}}
+              }
+            }
+          });
+        });
+
         lazyChart('jpCompaniesChart', function(el){
           var jp = d.jpCompanies;
           var colors = jp.data.map(function(_,i){
