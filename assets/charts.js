@@ -147,8 +147,8 @@
       });
     });
 
-    // JSON からデータを取得してグラフを描画
-    var DATA_URL = 'assets/data/charts-data.json';
+    // JSON からデータを取得してグラフを描画（en/ サブディレクトリからも動作）
+    var DATA_URL = (document.documentElement.lang === 'en' ? '../' : '') + 'assets/data/charts-data.json';
     fetch(DATA_URL+'?v='+Date.now())
       .then(function(r){ return r.json(); })
       .then(function(d){
@@ -218,6 +218,126 @@
                   ticks:{callback:function(v){return v.toLocaleString();}}},
                 y1:{position:'right', grid:{display:false}, beginAtZero:true,
                   ticks:{callback:function(v){return '+'+v;}}}
+              }
+            }
+          });
+        });
+      })
+        lazyChart('phFDIChart', function(el){
+          var fd = d.phFDI;
+          var colors = fd.data.map(function(_,i){
+            return (i >= fd.data.length - 2) ? GOLD : TAUPE;
+          });
+          new Chart(el, {
+            type:'bar',
+            data:{
+              labels: fd.labels,
+              datasets:[{
+                label: isEN ? 'FDI Net Inflows (USD 100M)' : 'FDI純流入（億USD）',
+                data: fd.data,
+                backgroundColor: colors,
+                borderRadius:3, borderWidth:0
+              }]
+            },
+            options:{
+              responsive:true, maintainAspectRatio:false,
+              plugins:{
+                legend:{display:false},
+                tooltip:{callbacks:{label:function(c){return c.parsed.y+(isEN?' B USD':'億USD');}}}
+              },
+              scales:{
+                x:{grid:{display:false}},
+                y:{grid:grid, beginAtZero:false,
+                  min: Math.floor(Math.min.apply(null, fd.data) * 0.85 / 10) * 10,
+                  ticks:{callback:function(v){return v+(isEN ? 'B' : '億');}}}
+              }
+            }
+          });
+        });
+
+        lazyChart('phFDIByCountryChart', function(el){
+          var fc = d.phFDIByCountry;
+          new Chart(el, {
+            type:'doughnut',
+            data:{
+              labels: isEN ? fc.labelsEN : fc.labels,
+              datasets:[{
+                data: fc.data,
+                backgroundColor:[NAVY, GOLD, WARM, NAVY_S, TAUPE, '#d4c4a4'],
+                borderColor:'#fff', borderWidth:3
+              }]
+            },
+            options:{
+              responsive:true, maintainAspectRatio:false, cutout:'62%',
+              plugins:{
+                legend:{position:'right', labels:{usePointStyle:true, padding:10, font:{size:10}}},
+                tooltip:{callbacks:{label:function(c){return c.label+': '+c.parsed+'%';}}}
+              }
+            }
+          });
+        });
+
+        lazyChart('phRegionsChart', function(el){
+          var rg = d.phRegions;
+          var lbl = isEN ? rg.labelsEN : rg.labels;
+          new Chart(el, {
+            type:'bar',
+            data:{
+              labels: lbl,
+              datasets:[
+                {label: isEN?'Japan':'日本',        data:rg.japan,       backgroundColor:NAVY,    borderRadius:2, borderWidth:0, stack:'s'},
+                {label: isEN?'Netherlands':'オランダ',data:rg.netherlands, backgroundColor:TAUPE,   borderRadius:2, borderWidth:0, stack:'s'},
+                {label: isEN?'USA':'アメリカ',       data:rg.usa,         backgroundColor:GOLD,    borderRadius:2, borderWidth:0, stack:'s'},
+                {label: isEN?'Singapore':'シンガポール',data:rg.singapore, backgroundColor:WARM,    borderRadius:2, borderWidth:0, stack:'s'},
+                {label: isEN?'S.Korea':'韓国',       data:rg.korea,       backgroundColor:NAVY_S,  borderRadius:2, borderWidth:0, stack:'s'},
+                {label: isEN?'Others':'その他',      data:rg.others,      backgroundColor:'#d4c4a4',borderRadius:2, borderWidth:0, stack:'s'}
+              ]
+            },
+            options:{
+              indexAxis:'y',
+              responsive:true, maintainAspectRatio:false,
+              plugins:{
+                legend:{position:'bottom', labels:{usePointStyle:true, padding:12, font:{size:10}}},
+                tooltip:{callbacks:{label:function(c){
+                  return c.dataset.label+': '+c.parsed.x.toLocaleString()+(isEN?' companies':'社');
+                }}}
+              },
+              scales:{
+                x:{stacked:true, grid:grid,
+                  ticks:{callback:function(v){return v.toLocaleString();}}},
+                y:{stacked:true, grid:{display:false},
+                  ticks:{font:{size:10}}}
+              }
+            }
+          });
+        });
+
+        lazyChart('phForexChart', function(el){
+          var fx = d.phForex;
+          new Chart(el, {
+            type:'bar',
+            data:{
+              labels: isEN ? fx.labelsEN : fx.labels,
+              datasets:[{
+                label: isEN ? 'Actual (2024)' : '実績（2024）',
+                data: fx.actual,
+                backgroundColor:NAVY_S, borderRadius:3, borderWidth:0
+              },{
+                label: isEN ? 'Target (2025)' : '目標（2025）',
+                data: fx.target,
+                backgroundColor:GOLD, borderRadius:3, borderWidth:0
+              }]
+            },
+            options:{
+              responsive:true, maintainAspectRatio:false,
+              plugins:{
+                legend:{position:'bottom', labels:{usePointStyle:true, font:{size:11}}},
+                tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+c.parsed.y+(isEN?' B USD':'億USD');}}}
+              },
+              scales:{
+                x:{grid:{display:false}},
+                y:{grid:grid, beginAtZero:true,
+                  ticks:{callback:function(v){return v+(isEN ? 'B' : '億');}}}
               }
             }
           });

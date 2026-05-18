@@ -15,5 +15,43 @@
     "labels": ["2019", "2020", "2021", "2022", "2023", "2024", "2025(推)"],
     "registered": [2870, 2890, 2950, 3080, 3240, 3420, 3580],
     "yoyIncrease": [null,   20,    60,  130,  160,  180,  160]
+  },
+
+  "phFDI": {
+    "title": "フィリピン 外国直接投資（FDI）推移",
+    "source": "BSP / UNCTAD（参考値、単位：億USD）",
+    "labels": ["2019", "2020", "2021", "2022", "2023", "2024(推)"],
+    "data":   [87,     65,    105,    92,     84,     98]
+  },
+
+  "phFDIByCountry": {
+    "title": "国別 対フィリピン投資シェア（2024年）",
+    "source": "BSP（参考値）",
+    "labels": ["日本", "オランダ", "アメリカ", "シンガポール", "韓国", "その他"],
+    "labelsEN": ["Japan", "Netherlands", "USA", "Singapore", "South Korea", "Others"],
+    "data": [22, 18, 16, 13, 9, 22]
+  },
+
+  "phForex": {
+    "title": "主要外貨収益源 実績 vs 目標",
+    "source": "BSP / NEDA（参考値、単位：億USD）",
+    "labels":   ["OFW送金", "BPO/IT-BPM", "観光収入", "FDI"],
+    "labelsEN": ["OFW Remittances", "BPO / IT-BPM", "Tourism", "FDI"],
+    "actual":   [362, 290, 50,  98],
+    "target":   [380, 350, 90, 120]
+  },
+
+  "phRegions": {
+    "title": "地域別・国籍別 外国企業進出数",
+    "source": "PSA / PEZA / BOI（参考値）",
+    "labels":   ["NCR（首都圏）", "CALABARZON", "中部ルソン", "中部ビサヤ（セブ）", "西部ビサヤ", "ダバオ地域"],
+    "labelsEN": ["NCR (Metro Manila)", "CALABARZON", "Central Luzon", "Central Visayas (Cebu)", "Western Visayas", "Davao Region"],
+    "totals":   [1400, 800, 500, 380, 220, 200],
+    "japan":       [380, 240, 150,  80, 55, 40],
+    "netherlands": [200,  80,  60,  40, 20, 15],
+    "usa":         [260, 100,  80,  85, 45, 35],
+    "singapore":   [180,  85,  55,  45, 25, 25],
+    "korea":        [90, 120,  60,  30, 15, 20],
+    "others":      [290, 175,  95, 100, 60, 65]
   }
 }
