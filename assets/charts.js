@@ -335,41 +335,6 @@
           });
         });
 
-        lazyChart('phRegionsChart', function(el){
-          var rg = d.phRegions;
-          var lbl = isEN ? rg.labelsEN : rg.labels;
-          new Chart(el, {
-            type:'bar',
-            data:{
-              labels: lbl,
-              datasets:[
-                {label: isEN?'Japan':'日本',        data:rg.japan,       backgroundColor:NAVY,    borderRadius:2, borderWidth:0, stack:'s'},
-                {label: isEN?'Netherlands':'オランダ',data:rg.netherlands, backgroundColor:TAUPE,   borderRadius:2, borderWidth:0, stack:'s'},
-                {label: isEN?'USA':'アメリカ',       data:rg.usa,         backgroundColor:GOLD,    borderRadius:2, borderWidth:0, stack:'s'},
-                {label: isEN?'Singapore':'シンガポール',data:rg.singapore, backgroundColor:WARM,    borderRadius:2, borderWidth:0, stack:'s'},
-                {label: isEN?'S.Korea':'韓国',       data:rg.korea,       backgroundColor:NAVY_S,  borderRadius:2, borderWidth:0, stack:'s'},
-                {label: isEN?'Others':'その他',      data:rg.others,      backgroundColor:'#d4c4a4',borderRadius:2, borderWidth:0, stack:'s'}
-              ]
-            },
-            options:{
-              indexAxis:'y',
-              responsive:true, maintainAspectRatio:false,
-              plugins:{
-                legend:{position:'bottom', labels:{usePointStyle:true, padding:12, font:{size:10}}},
-                tooltip:{callbacks:{label:function(c){
-                  return c.dataset.label+': '+c.parsed.x.toLocaleString()+(isEN?' companies':'社');
-                }}}
-              },
-              scales:{
-                x:{stacked:true, grid:grid,
-                  ticks:{callback:function(v){return v.toLocaleString();}}},
-                y:{stacked:true, grid:{display:false},
-                  ticks:{font:{size:10}}}
-              }
-            }
-          });
-        });
-
         lazyChart('phForexChart', function(el){
           var fx = d.phForex;
           new Chart(el, {

@@ -31,7 +31,13 @@
     <nav class="nav-links" id="navLinks">
       <a href="../index.html">HOME</a>
       <a href="company.html">COMPANY</a>
-      <a href="service.html">SERVICE</a>
+      <div class="nav-item nav-item--drop">
+        <a href="service.html">SERVICE <span class="drop-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="service.html">Services Overview</a>
+          <a href="ph-economy.html">PH Economy Data</a>
+        </div>
+      </div>
       <a href="../hiring.html">CAREERS</a>
       <a href="request.html">CONTACT</a>
       <span class="lang"><a class="active">EN</a> <span class="sep">|</span> <a href="../ph-economy.html">日本語</a></span>
@@ -56,6 +62,15 @@
       Demographics · GDP · FDI · Forex Earnings · Regional Investment —<br>
       A comprehensive data report for companies considering the Philippine market.
     </p>
+    <div class="fx-ticker">
+      <span class="fx-ticker-tag">LIVE RATE</span>
+      <span class="fx-ticker-main">
+        <span class="fx-from">¥10,000</span>
+        <span class="fx-arr">→</span>
+        <span class="fx-to" id="fxPhp"><span class="fx-loading">…</span></span>
+      </span>
+      <span class="fx-ticker-date" id="fxDate"></span>
+    </div>
   </div>
 </section>
 
@@ -224,7 +239,7 @@
     <div class="section-head">
       <span class="section-tag">— REGIONAL DATA</span>
       <h2 class="section-title">Foreign Company Presence by Region &amp; Nationality</h2>
-      <p class="section-sub">Number of foreign enterprises by major Philippine region. Circle size represents company count.</p>
+      <p class="section-sub">Foreign enterprises in major Philippine regions, broken down by investor nationality. Each region card shows the nationality composition.</p>
     </div>
 
     <div class="ph-region-layout">
@@ -274,7 +289,155 @@
           <h4>Foreign Companies by Region &amp; Nationality</h4>
           <span class="badge">REF. VALUES</span>
         </div>
-        <div class="chart-wrap" style="height:380px"><canvas id="phRegionsChart"></canvas></div>
+        <div class="rc-nat-legend">
+          <span><i style="background:#d64545"></i>Japan</span>
+          <span><i style="background:#e8925e"></i>Netherlands</span>
+          <span><i style="background:#4a90d9"></i>USA</span>
+          <span><i style="background:#4aaa72"></i>Singapore</span>
+          <span><i style="background:#9b72cf"></i>S. Korea</span>
+          <span><i style="background:#a0a8b0"></i>Others</span>
+        </div>
+        <div class="region-cards">
+
+          <div class="region-card">
+            <div class="rc-header">
+              <div class="rc-title"><span class="rc-code">NCR</span><span class="rc-name">Metro Manila</span></div>
+              <span class="rc-total">1,400 co.</span>
+            </div>
+            <div class="rc-bar">
+              <div class="rc-seg" style="flex:380;background:#d64545" title="Japan: 380 co. (27%)"></div>
+              <div class="rc-seg" style="flex:200;background:#e8925e" title="Netherlands: 200 co. (14%)"></div>
+              <div class="rc-seg" style="flex:260;background:#4a90d9" title="USA: 260 co. (19%)"></div>
+              <div class="rc-seg" style="flex:180;background:#4aaa72" title="Singapore: 180 co. (13%)"></div>
+              <div class="rc-seg" style="flex:90;background:#9b72cf" title="S. Korea: 90 co. (6%)"></div>
+              <div class="rc-seg" style="flex:290;background:#a0a8b0" title="Others: 290 co. (21%)"></div>
+            </div>
+            <div class="rc-legend">
+              <span><i style="background:#d64545"></i>Japan 380</span>
+              <span><i style="background:#e8925e"></i>NL 200</span>
+              <span><i style="background:#4a90d9"></i>US 260</span>
+              <span><i style="background:#4aaa72"></i>SGP 180</span>
+              <span><i style="background:#9b72cf"></i>KR 90</span>
+              <span><i style="background:#a0a8b0"></i>Other 290</span>
+            </div>
+          </div>
+
+          <div class="region-card">
+            <div class="rc-header">
+              <div class="rc-title"><span class="rc-code">IV-A</span><span class="rc-name">CALABARZON</span></div>
+              <span class="rc-total">800 co.</span>
+            </div>
+            <div class="rc-bar">
+              <div class="rc-seg" style="flex:240;background:#d64545" title="Japan: 240 co. (30%)"></div>
+              <div class="rc-seg" style="flex:80;background:#e8925e" title="Netherlands: 80 co. (10%)"></div>
+              <div class="rc-seg" style="flex:100;background:#4a90d9" title="USA: 100 co. (13%)"></div>
+              <div class="rc-seg" style="flex:85;background:#4aaa72" title="Singapore: 85 co. (11%)"></div>
+              <div class="rc-seg" style="flex:120;background:#9b72cf" title="S. Korea: 120 co. (15%)"></div>
+              <div class="rc-seg" style="flex:175;background:#a0a8b0" title="Others: 175 co. (22%)"></div>
+            </div>
+            <div class="rc-legend">
+              <span><i style="background:#d64545"></i>Japan 240</span>
+              <span><i style="background:#e8925e"></i>NL 80</span>
+              <span><i style="background:#4a90d9"></i>US 100</span>
+              <span><i style="background:#4aaa72"></i>SGP 85</span>
+              <span><i style="background:#9b72cf"></i>KR 120</span>
+              <span><i style="background:#a0a8b0"></i>Other 175</span>
+            </div>
+          </div>
+
+          <div class="region-card">
+            <div class="rc-header">
+              <div class="rc-title"><span class="rc-code">III</span><span class="rc-name">Central Luzon</span></div>
+              <span class="rc-total">500 co.</span>
+            </div>
+            <div class="rc-bar">
+              <div class="rc-seg" style="flex:150;background:#d64545" title="Japan: 150 co. (30%)"></div>
+              <div class="rc-seg" style="flex:60;background:#e8925e" title="Netherlands: 60 co. (12%)"></div>
+              <div class="rc-seg" style="flex:80;background:#4a90d9" title="USA: 80 co. (16%)"></div>
+              <div class="rc-seg" style="flex:55;background:#4aaa72" title="Singapore: 55 co. (11%)"></div>
+              <div class="rc-seg" style="flex:60;background:#9b72cf" title="S. Korea: 60 co. (12%)"></div>
+              <div class="rc-seg" style="flex:95;background:#a0a8b0" title="Others: 95 co. (19%)"></div>
+            </div>
+            <div class="rc-legend">
+              <span><i style="background:#d64545"></i>Japan 150</span>
+              <span><i style="background:#e8925e"></i>NL 60</span>
+              <span><i style="background:#4a90d9"></i>US 80</span>
+              <span><i style="background:#4aaa72"></i>SGP 55</span>
+              <span><i style="background:#9b72cf"></i>KR 60</span>
+              <span><i style="background:#a0a8b0"></i>Other 95</span>
+            </div>
+          </div>
+
+          <div class="region-card">
+            <div class="rc-header">
+              <div class="rc-title"><span class="rc-code">VII</span><span class="rc-name">Central Visayas (Cebu)</span></div>
+              <span class="rc-total">380 co.</span>
+            </div>
+            <div class="rc-bar">
+              <div class="rc-seg" style="flex:80;background:#d64545" title="Japan: 80 co. (21%)"></div>
+              <div class="rc-seg" style="flex:40;background:#e8925e" title="Netherlands: 40 co. (11%)"></div>
+              <div class="rc-seg" style="flex:85;background:#4a90d9" title="USA: 85 co. (22%)"></div>
+              <div class="rc-seg" style="flex:45;background:#4aaa72" title="Singapore: 45 co. (12%)"></div>
+              <div class="rc-seg" style="flex:30;background:#9b72cf" title="S. Korea: 30 co. (8%)"></div>
+              <div class="rc-seg" style="flex:100;background:#a0a8b0" title="Others: 100 co. (26%)"></div>
+            </div>
+            <div class="rc-legend">
+              <span><i style="background:#d64545"></i>Japan 80</span>
+              <span><i style="background:#e8925e"></i>NL 40</span>
+              <span><i style="background:#4a90d9"></i>US 85</span>
+              <span><i style="background:#4aaa72"></i>SGP 45</span>
+              <span><i style="background:#9b72cf"></i>KR 30</span>
+              <span><i style="background:#a0a8b0"></i>Other 100</span>
+            </div>
+          </div>
+
+          <div class="region-card">
+            <div class="rc-header">
+              <div class="rc-title"><span class="rc-code">VI</span><span class="rc-name">Western Visayas</span></div>
+              <span class="rc-total">220 co.</span>
+            </div>
+            <div class="rc-bar">
+              <div class="rc-seg" style="flex:55;background:#d64545" title="Japan: 55 co. (25%)"></div>
+              <div class="rc-seg" style="flex:20;background:#e8925e" title="Netherlands: 20 co. (9%)"></div>
+              <div class="rc-seg" style="flex:45;background:#4a90d9" title="USA: 45 co. (20%)"></div>
+              <div class="rc-seg" style="flex:25;background:#4aaa72" title="Singapore: 25 co. (11%)"></div>
+              <div class="rc-seg" style="flex:15;background:#9b72cf" title="S. Korea: 15 co. (7%)"></div>
+              <div class="rc-seg" style="flex:60;background:#a0a8b0" title="Others: 60 co. (27%)"></div>
+            </div>
+            <div class="rc-legend">
+              <span><i style="background:#d64545"></i>Japan 55</span>
+              <span><i style="background:#e8925e"></i>NL 20</span>
+              <span><i style="background:#4a90d9"></i>US 45</span>
+              <span><i style="background:#4aaa72"></i>SGP 25</span>
+              <span><i style="background:#9b72cf"></i>KR 15</span>
+              <span><i style="background:#a0a8b0"></i>Other 60</span>
+            </div>
+          </div>
+
+          <div class="region-card">
+            <div class="rc-header">
+              <div class="rc-title"><span class="rc-code">XI</span><span class="rc-name">Davao Region</span></div>
+              <span class="rc-total">200 co.</span>
+            </div>
+            <div class="rc-bar">
+              <div class="rc-seg" style="flex:40;background:#d64545" title="Japan: 40 co. (20%)"></div>
+              <div class="rc-seg" style="flex:15;background:#e8925e" title="Netherlands: 15 co. (8%)"></div>
+              <div class="rc-seg" style="flex:35;background:#4a90d9" title="USA: 35 co. (18%)"></div>
+              <div class="rc-seg" style="flex:25;background:#4aaa72" title="Singapore: 25 co. (13%)"></div>
+              <div class="rc-seg" style="flex:20;background:#9b72cf" title="S. Korea: 20 co. (10%)"></div>
+              <div class="rc-seg" style="flex:65;background:#a0a8b0" title="Others: 65 co. (33%)"></div>
+            </div>
+            <div class="rc-legend">
+              <span><i style="background:#d64545"></i>Japan 40</span>
+              <span><i style="background:#e8925e"></i>NL 15</span>
+              <span><i style="background:#4a90d9"></i>US 35</span>
+              <span><i style="background:#4aaa72"></i>SGP 25</span>
+              <span><i style="background:#9b72cf"></i>KR 20</span>
+              <span><i style="background:#a0a8b0"></i>Other 65</span>
+            </div>
+          </div>
+
+        </div>
         <p class="data-chart-source">Source: PSA / PEZA / BOI (reference values)</p>
       </div>
     </div>
@@ -358,5 +521,28 @@
 <script src="../assets/main.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 <script src="../assets/charts.js" defer></script>
+<script>
+(function(){
+  var phpEl = document.getElementById('fxPhp');
+  var dateEl = document.getElementById('fxDate');
+  if (!phpEl) return;
+  fetch('https://open.er-api.com/v6/latest/JPY')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var rate = d.rates && d.rates.PHP;
+      if (!rate) { phpEl.textContent = '—'; return; }
+      phpEl.textContent = '₱ ' + Math.round(10000 * rate).toLocaleString();
+      if (dateEl && d.time_last_update_utc) {
+        var dt = new Date(d.time_last_update_utc);
+        if (!isNaN(dt.getTime())) {
+          dateEl.textContent = dt.getFullYear() + '/' +
+            String(dt.getMonth()+1).padStart(2,'0') + '/' +
+            String(dt.getDate()).padStart(2,'0') + ' updated';
+        }
+      }
+    })
+    .catch(function(){ phpEl.textContent = '—'; });
+})();
+</script>
 </body>
 </html>

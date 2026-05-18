@@ -31,7 +31,13 @@
     <nav class="nav-links" id="navLinks">
       <a href="index.html">HOME</a>
       <a href="company.html">COMPANY</a>
-      <a href="service.html">SERVICE</a>
+      <div class="nav-item nav-item--drop">
+        <a href="service.html">SERVICE <span class="drop-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="service.html">サービス概要</a>
+          <a href="ph-economy.html">フィリピン経済動向</a>
+        </div>
+      </div>
       <a href="hiring.html">採用情報</a>
       <a href="request.html">CONTACT</a>
       <span class="lang"><a href="en/index.html">EN</a> <span class="sep">|</span> <a class="active">日本語</a></span>
@@ -63,6 +69,15 @@
       <div><strong>15+</strong><span>YEARS</span></div>
       <div><strong>240</strong><span>PROJECTS</span></div>
       <div><strong>98%</strong><span>SATISFACTION</span></div>
+    </div>
+    <div class="fx-ticker">
+      <span class="fx-ticker-tag">LIVE RATE</span>
+      <span class="fx-ticker-main">
+        <span class="fx-from">¥10,000</span>
+        <span class="fx-arr">→</span>
+        <span class="fx-to" id="fxPhp"><span class="fx-loading">…</span></span>
+      </span>
+      <span class="fx-ticker-date" id="fxDate"></span>
     </div>
   </div>
   <div class="scroll-hint">SCROLL ↓</div>
@@ -290,5 +305,28 @@
 <script src="assets/main.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 <script src="assets/charts.js" defer></script>
+<script>
+(function(){
+  var phpEl = document.getElementById('fxPhp');
+  var dateEl = document.getElementById('fxDate');
+  if (!phpEl) return;
+  fetch('https://open.er-api.com/v6/latest/JPY')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var rate = d.rates && d.rates.PHP;
+      if (!rate) { phpEl.textContent = '—'; return; }
+      phpEl.textContent = '₱ ' + Math.round(10000 * rate).toLocaleString();
+      if (dateEl && d.time_last_update_utc) {
+        var dt = new Date(d.time_last_update_utc);
+        if (!isNaN(dt.getTime())) {
+          dateEl.textContent = dt.getFullYear() + '/' +
+            String(dt.getMonth()+1).padStart(2,'0') + '/' +
+            String(dt.getDate()).padStart(2,'0') + ' 更新';
+        }
+      }
+    })
+    .catch(function(){ phpEl.textContent = '—'; });
+})();
+</script>
 </body>
 </html>
