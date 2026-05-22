@@ -55,7 +55,7 @@
           <a href="ph-economy.html">PH Economy Data</a>
         </div>
       </div>
-      <a href="../hiring.html">CAREERS</a>
+      <a href="hiring.html">CAREERS</a>
       <a href="request.html">CONTACT</a>
       <span class="lang"><a class="active">EN</a> <span class="sep">|</span> <a href="../index.html">日本語</a></span>
       <a href="request.html" class="cta-btn">REQUEST INFO</a>
@@ -205,7 +205,7 @@
           <span class="ht-tag">WE'RE HIRING</span>
           <h4>Careers</h4>
           <p>Sales Consultant · Tokyo<br>Join us in bridging Japan and the Philippines.</p>
-          <a href="request.html">Inquire →</a>
+          <a href="hiring.html">View openings →</a>
         </div>
       </div>
     </div>
@@ -327,28 +327,5 @@
 <script src="../assets/main.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 <script src="../assets/charts.js" defer></script>
-<script>
-(function(){
-  var phpEl = document.getElementById('fxPhp');
-  var dateEl = document.getElementById('fxDate');
-  if (!phpEl) return;
-  fetch('https://open.er-api.com/v6/latest/JPY')
-    .then(function(r){ return r.json(); })
-    .then(function(d){
-      var rate = d.rates && d.rates.PHP;
-      if (!rate) { phpEl.textContent = '—'; return; }
-      phpEl.textContent = '₱ ' + Math.round(10000 * rate).toLocaleString();
-      if (dateEl && d.time_last_update_utc) {
-        var dt = new Date(d.time_last_update_utc);
-        if (!isNaN(dt.getTime())) {
-          dateEl.textContent = dt.getFullYear() + '/' +
-            String(dt.getMonth()+1).padStart(2,'0') + '/' +
-            String(dt.getDate()).padStart(2,'0') + ' updated';
-        }
-      }
-    })
-    .catch(function(){ phpEl.textContent = '—'; });
-})();
-</script>
 </body>
 </html>

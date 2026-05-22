@@ -149,7 +149,8 @@
 
     // JSON からデータを取得してグラフを描画（en/ サブディレクトリからも動作）
     // sessionStorage にキャッシュして同一セッション内の再フェッチを防ぐ
-    var DATA_URL = (document.documentElement.lang === 'en' ? '../' : '') + 'assets/data/charts-data.json';
+    var isEnPage = (document.documentElement.lang || 'ja').toLowerCase().indexOf('en') === 0;
+    var DATA_URL = (isEnPage ? '../' : '') + 'assets/data/charts-data.json';
     var CACHE_KEY = 'ihi_charts_v3';
     function renderWithData(d){
         lazyChart('phAgeChart', function(el){
@@ -245,6 +246,7 @@
         lazyChart('pezaChart', function(el){
           var pz = d.peza;
           new Chart(el, {
+            type:'bar',
             data:{
               labels: pz.labels,
               datasets:[{

@@ -54,9 +54,22 @@
 
   <url>
     <loc>https://4ever.github.io/insoire-holdings.japan/hiring.html</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://4ever.github.io/insoire-holdings.japan/hiring.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://4ever.github.io/insoire-holdings.japan/en/hiring.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://4ever.github.io/insoire-holdings.japan/hiring.html"/>
+  </url>
+
+  <url>
+    <loc>https://4ever.github.io/insoire-holdings.japan/en/hiring.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://4ever.github.io/insoire-holdings.japan/hiring.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://4ever.github.io/insoire-holdings.japan/en/hiring.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://4ever.github.io/insoire-holdings.japan/hiring.html"/>
   </url>
 
   <url>

@@ -101,6 +101,7 @@
     var color = canvas.dataset.color || '#b8945a';
     var dpr = window.devicePixelRatio || 1;
     var w = canvas.offsetWidth, h = canvas.offsetHeight || 36;
+    if (!w || !h || data.length < 2) return;
     canvas.width = w * dpr; canvas.height = h * dpr;
     var ctx = canvas.getContext('2d');
     ctx.scale(dpr, dpr);
@@ -137,4 +138,45 @@
   window.addEventListener('resize', function(){
     document.querySelectorAll('.spark').forEach(drawSpark);
   });
+
+  // JPY → PHP live rate ticker (hero / service / ph-economy pages)
+  (function initFxTicker(){
+    var phpEl = document.getElementById('fxPhp');
+    if (!phpEl) return;
+    var dateEl = document.getElementById('fxDate');
+    var loading = phpEl.querySelector('.fx-loading');
+    var isEN = (document.documentElement.lang || 'ja').toLowerCase().indexOf('en') === 0;
+    var locale = isEN ? 'en-US' : 'ja-JP';
+    var updatedLabel = isEN ? ' updated' : ' 更新';
+    var FALLBACK_RATE = 3.85;
+
+    function setValue(rate, dateStr){
+      if (loading) loading.remove();
+      phpEl.textContent = '₱ ' + Math.round(10000 * rate).toLocaleString(locale);
+      if (dateEl && dateStr) dateEl.textContent = dateStr;
+    }
+
+    fetch('https://open.er-api.com/v6/latest/JPY')
+      .then(function(r){
+        if (!r.ok) throw new Error('rate unavailable');
+        return r.json();
+      })
+      .then(function(d){
+        var rate = d && d.rates && d.rates.PHP;
+        if (!rate) throw new Error('no PHP rate');
+        var dateStr = '';
+        if (dateEl && d.time_last_update_utc) {
+          var dt = new Date(d.time_last_update_utc);
+          if (!isNaN(dt.getTime())) {
+            dateStr = dt.getFullYear() + '/' +
+              String(dt.getMonth() + 1).padStart(2, '0') + '/' +
+              String(dt.getDate()).padStart(2, '0') + updatedLabel;
+          }
+        }
+        setValue(rate, dateStr);
+      })
+      .catch(function(){
+        setValue(FALLBACK_RATE, isEN ? 'Estimate (live rate unavailable)' : '概算（レート取得不可）');
+      });
+  })();
 })();
