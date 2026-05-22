@@ -534,5 +534,28 @@
 <script src="assets/main.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 <script src="assets/charts.js" defer></script>
+<script>
+(function(){
+  var phpEl = document.getElementById('fxPhp');
+  var dateEl = document.getElementById('fxDate');
+  if (!phpEl) return;
+  fetch('https://open.er-api.com/v6/latest/JPY')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var rate = d.rates && d.rates.PHP;
+      if (!rate) { phpEl.textContent = '—'; return; }
+      phpEl.textContent = '₱ ' + Math.round(10000 * rate).toLocaleString();
+      if (dateEl && d.time_last_update_utc) {
+        var dt = new Date(d.time_last_update_utc);
+        if (!isNaN(dt.getTime())) {
+          dateEl.textContent = dt.getFullYear() + '/' +
+            String(dt.getMonth()+1).padStart(2,'0') + '/' +
+            String(dt.getDate()).padStart(2,'0') + ' 更新';
+        }
+      }
+    })
+    .catch(function(){ phpEl.textContent = '—'; });
+})();
+</script>
 </body>
 </html>
