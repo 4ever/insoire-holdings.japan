@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9XV269N1V7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9XV269N1V7');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>事例・実績 | Inspire Holdings株式会社</title>
+<meta name="description" content="Inspire Holdingsのフィリピン進出・法人設立・不動産取得支援・IT開発の支援事例をご紹介します。240件超の実績から厳選。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="canonical" href="https://inspire-holdings.co.jp/cases.html" />
+<link rel="alternate" hreflang="ja" href="https://inspire-holdings.co.jp/cases.html" />
+<link rel="alternate" hreflang="en" href="https://inspire-holdings.co.jp/en/cases.html" />
+<link rel="alternate" hreflang="x-default" href="https://inspire-holdings.co.jp/cases.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Inspire Holdings Inc." />
+<meta property="og:title" content="事例・実績 | Inspire Holdings株式会社" />
+<meta property="og:description" content="フィリピン進出・法人設立・不動産取得支援・IT開発の支援事例240件超から厳選紹介。" />
+<meta property="og:url" content="https://inspire-holdings.co.jp/cases.html" />
+<meta property="og:image" content="https://inspire-holdings.co.jp/assets/img/ogp.png" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<style>
+.page-hero--cases .hero-bg {
+  background-image: linear-gradient(135deg,#2a3a52 0%,#1a2332 100%);
+}
+/* stat bar */
+.cases-stats {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 64px;
+}
+@media(max-width:700px){ .cases-stats{grid-template-columns:repeat(2,1fr)} }
+.cases-stat {
+  background: var(--bg);
+  padding: 28px 20px;
+  text-align: center;
+}
+.cases-stat-num {
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.cases-stat-label {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 6px;
+  letter-spacing: 0.08em;
+}
+/* filter */
+.cases-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.cases-filter-btn {
+  padding: 7px 18px;
+  border: 1.5px solid var(--accent);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.cases-filter-btn:hover,
+.cases-filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+/* case cards grid */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media(max-width:900px){ .cases-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:600px){ .cases-grid{grid-template-columns:1fr} }
+.case-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg);
+  transition: box-shadow .25s, transform .25s;
+}
+.case-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  transform: translateY(-3px);
+}
+.case-card-tag-bar {
+  padding: 12px 20px 0;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.case-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+.case-card-body {
+  padding: 18px 20px 24px;
+}
+.case-card-title {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--bg-dark);
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+.case-card-summary {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.case-card-result {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  background: var(--bg-alt);
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.case-card-result::before {
+  content: "✅";
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.case-period {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 12px;
+  letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/img/ihilogo.webp" alt="Inspire Holdings" class="logo-img logo-img--header" width="128" height="36" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="company.html">COMPANY</a>
+      <div class="nav-item nav-item--drop">
+        <a href="service.html">SERVICE <span class="drop-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="service.html">サービス概要</a>
+          <a href="ph-economy.html">フィリピン経済動向</a>
+          <a href="faq.html">よくある質問</a>
+        </div>
+      </div>
+      <a href="hiring.html">採用情報</a>
+      <a href="request.html">CONTACT</a>
+      <span class="lang"><a href="en/cases.html">EN</a> <span class="sep">|</span> <a class="active">日本語</a></span>
+      <a href="request.html" class="cta-btn">REQUEST INFO</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="menu">≡</button>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero page-hero--cases">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a><span class="sep">/</span><span>事例・実績</span>
+    </div>
+    <h1 class="page-hero-title">事例・実績</h1>
+    <p class="page-hero-sub">
+      フィリピン進出・法人設立・不動産サポート・IT開発 —<br>
+      グループ240件超の支援から厳選した事例をご紹介します。
+    </p>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<section class="section section-light" style="padding:40px 0">
+  <div class="container">
+    <div class="cases-stats">
+      <div class="cases-stat">
+        <div class="cases-stat-num">240<span style="font-size:20px">件+</span></div>
+        <div class="cases-stat-label">グループ支援実績</div>
+      </div>
+      <div class="cases-stat">
+        <div class="cases-stat-num">98<span style="font-size:20px">%</span></div>
+        <div class="cases-stat-label">顧客満足度</div>
+      </div>
+      <div class="cases-stat">
+        <div class="cases-stat-num">86<span style="font-size:20px">社</span></div>
+        <div class="cases-stat-label">パートナー企業</div>
+      </div>
+      <div class="cases-stat">
+        <div class="cases-stat-num">19<span style="font-size:20px">社</span></div>
+        <div class="cases-stat-label">グループ会社</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASES GRID ===== -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-head center" style="margin-bottom:32px">
+      <span class="section-tag">— CASE STUDIES</span>
+      <h2 class="section-title">支援事例</h2>
+      <p class="section-sub">※ プライバシー保護のため、業種・規模を一部変更して掲載しています。</p>
+    </div>
+
+    <div class="cases-filter">
+      <button class="cases-filter-btn active" data-cat="all">すべて</button>
+      <button class="cases-filter-btn" data-cat="bizz">法人設立・進出</button>
+      <button class="cases-filter-btn" data-cat="realestate">不動産サポート</button>
+      <button class="cases-filter-btn" data-cat="it">IT・EC開発</button>
+      <button class="cases-filter-btn" data-cat="life">移住支援</button>
+    </div>
+
+    <div class="cases-grid">
+
+      <!-- Case 1 -->
+      <div class="case-card" data-cat="bizz">
+        <div class="case-card-tag-bar">
+          <span class="case-tag">法人設立</span>
+          <span class="case-tag">IT業</span>
+        </div>
+        <div class="case-card-body">
+          <h3 class="case-card-title">東京のIT企業がBGCにOPCを設立、エンジニア採用まで完結</h3>
+          <p class="case-card-summary">フィリピン人エンジニアの採用コスト削減を目的に進出を検討。法人形態の選定から、SEC登録・BIR登録・オフィス契約・初期採用まで一括サポート。</p>
+          <div class="case-card-result">初回相談から法人稼働まで約2.5ヶ月。当初想定比30%のコスト削減を実現。</div>
+          <p class="case-period">2025年 / 従業員規模：20名</p>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="case-card" data-cat="bizz">
+        <div class="case-card-tag-bar">
+          <span class="case-tag">フランチャイズ進出</span>
+          <span class="case-tag">飲食業</span>
+        </div>
+        <div class="case-card-body">
+          <h3 class="case-card-title">飲食チェーンのフィリピン1号店出店をゼロからサポート</h3>
+          <p class="case-card-summary">日本の飲食チェーンが初の海外展開を検討。市場調査・出店エリア選定・フランチャイズ契約の法的チェック・スタッフ採用まで包括的に支援。</p>
+          <div class="case-card-result">セブ・マクタン地区に1号店出店。オープン3ヶ月で黒字化達成。</div>
+          <p class="case-period">2024年 / 店舗規模：スタッフ12名</p>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="case-card" data-cat="realestate">
+        <div class="case-card-tag-bar">
+          <span class="case-tag">不動産取得支援</span>
+          <span class="case-tag">個人投資家</span>
+        </div>
+        <div class="case-card-body">
+          <h3 class="case-card-title">BGCコンドミニアムの取得・賃貸運用を日本語で完全サポート</h3>
+          <p class="case-card-summary">現地情報が少なく不安を抱えていた個人投資家に対し、エリア選定・物件比較・購入手続き・賃貸管理まで一貫してサポート。現地パートナーとの連携で日本語のみで完結。</p>
+          <div class="case-card-result">取得後6ヶ月以内に入居者確定。想定利回りを達成。</div>
+          <p class="case-period">2025年 / BGCエリア</p>
+        </div>
+      </div>
+
+      <!-- Case 4 -->
+      <div class="case-card" data-cat="it">
+        <div class="case-card-tag-bar">
+          <span class="case-tag">システム開発</span>
+          <span class="case-tag">製造業</span>
+        </div>
+        <div class="case-card-body">
+          <h3 class="case-card-title">製造業の在庫・受発注管理システムをフィリピン開発チームで内製化</h3>
+          <p class="case-card-summary">日本の中堅製造業が既存の高額ERPから脱却し、業務特化の管理システムへ移行したいというニーズに対応。要件定義から設計・開発・テスト・運用引き継ぎまで担当。</p>
+          <div class="case-card-result">開発コストを国内委託比50%削減。納期4ヶ月で本番稼働。</div>
+          <p class="case-period">2024〜2025年 / 開発期間：4ヶ月</p>
+        </div>
+      </div>
+
+      <!-- Case 5 -->
+      <div class="case-card" data-cat="it">
+        <div class="case-card-tag-bar">
+          <span class="case-tag">EC構築</span>
+          <span class="case-tag">小売業</span>
+        </div>
+        <div class="case-card-body">
+          <h3 class="case-card-title">日本ブランドの越境EC構築 — フィリピン市場への本格参入</h3>
+          <p class="case-card-summary">日本のアパレルブランドがフィリピン向け越境ECを立ち上げ。現地決済・物流・カスタマーサポート体制の整備とECサイト制作を一括サポート。</p>
+          <div class="case-card-result">ローンチ2ヶ月で月商100万円超。SNS連動施策で認知を拡大中。</div>
+          <p class="case-period">2025年 / 越境EC</p>
+        </div>
+      </div>
+
+      <!-- Case 6 -->
+      <div class="case-card" data-cat="life">
+        <div class="case-card-tag-bar">
+          <span class="case-tag">移住支援</span>
+          <span class="case-tag">家族移住</span>
+        </div>
+        <div class="case-card-body">
+          <h3 class="case-card-title">子供のインター入学・ビザ取得・住居確保を3ヶ月でワンストップ対応</h3>
+          <p class="case-card-summary">小学生のお子様を持つ家族がフィリピン移住を決断。SRRV申請、インターナショナルスクールの入学手続き、BGCエリアでのコンドミニアム契約を一括サポート。</p>
+          <div class="case-card-result">渡航から3ヶ月以内に生活基盤を確立。「言語の壁がなかった」とご評価いただきました。</div>
+          <p class="case-period">2025年 / 4人家族</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-head center">
+      <span class="section-tag">— TESTIMONIALS</span>
+      <h2 class="section-title">お客様の声</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px">
+
+      <blockquote style="background:var(--bg);border-radius:12px;padding:28px;border:1px solid var(--line);position:relative">
+        <p style="font-size:14px;line-height:1.85;color:var(--text-dim);margin-bottom:16px">「日本語で全て完結できたのが一番助かりました。フィリピンのことを何も知らない状態でも、丁寧に手順を説明してもらい、安心して法人設立を任せられました。」</p>
+        <footer style="font-size:12px;color:var(--text-light);font-weight:600">— IT企業 代表取締役 / 東京都</footer>
+      </blockquote>
+
+      <blockquote style="background:var(--bg);border-radius:12px;padding:28px;border:1px solid var(--line);position:relative">
+        <p style="font-size:14px;line-height:1.85;color:var(--text-dim);margin-bottom:16px">「不動産の取得から賃貸管理まで、現地に一度も行かずに完結できました。信頼できるパートナーがいるかどうかで全然違うと実感しています。」</p>
+        <footer style="font-size:12px;color:var(--text-light);font-weight:600">— 個人投資家 / 大阪府</footer>
+      </blockquote>
+
+      <blockquote style="background:var(--bg);border-radius:12px;padding:28px;border:1px solid var(--line);position:relative">
+        <p style="font-size:14px;line-height:1.85;color:var(--text-dim);margin-bottom:16px">「子供の学校探しから家探しまで全部お願いしました。移住って難しいと思っていましたが、3ヶ月でここまで整うとは思っていませんでした。本当に頼もしいサポートです。」</p>
+        <footer style="font-size:12px;color:var(--text-light);font-weight:600">— 移住者ご家族 / 神奈川県</footer>
+      </blockquote>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONSULT CTA BAND ===== -->
+<section class="consult-band">
+  <div class="container">
+    <div>
+      <h2>あなたの「挑戦」を次の事例に。</h2>
+      <p>
+        「うちの業種でも大丈夫？」「まず何から始めればいい？」<br>
+        どんな段階のご質問も、初回は無料でお答えします。
+      </p>
+      <a href="request.html" class="btn-primary">無料相談を申し込む</a>
+    </div>
+    <div class="consult-actions">
+      <div class="consult-phone">
+        <div class="ph-label">PHONE</div>
+        <div class="ph-num">03-6823-5140</div>
+        <div class="ph-hours">受付時間 9:00 – 17:00 (土日祝休)</div>
+      </div>
+      <div class="consult-phone">
+        <div class="ph-label">LINE</div>
+        <a href="https://line.me/R/ti/p/@276vfbxo" target="_blank" rel="noopener" style="margin-top:8px;display:inline-block">
+          <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" style="height:40px;width:auto;border-radius:4px">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo_holdings.webp" alt="Inspire Holdings" class="logo-img logo-img--footer" width="958" height="260" />
+      </a>
+      <p>世界規模の投資・移住という複雑な課題を、ビジネス・個人双方に分かりやすく。Inspire Holdings は日比間をつなぐ総合ソリューション・パートナーです。</p>
+      <p style="margin-top:14px"><a href="request.html" style="color:var(--accent);font-weight:600;letter-spacing:0.15em;font-size:12px">→ REQUEST FORM</a></p>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="company.html">About Us</a></li>
+        <li><a href="cases.html">事例・実績</a></li>
+        <li><a href="hiring.html">採用情報</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="request.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="service.html#business">Business Related</a></li>
+        <li><a href="service.html#general">General Support</a></li>
+        <li><a href="service.html#ecommerce">E-Commerce</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="pricing.html">料金プラン</a></li>
+        <li><a href="seminar.html">セミナー情報</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Office</h5>
+      <ul>
+        <li>〒100-8283</li>
+        <li>東京都千代田区<br>丸の内一丁目8番3号</li>
+        <li>Mon - Fri: 9:00 – 18:00</li>
+        <li>03-6823-5140</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inspire Holdings株式会社. All Rights Reserved.</span>
+    <span><a href="privacy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+<script>
+(function(){
+  document.querySelectorAll('.cases-filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.cases-filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.dataset.cat;
+      document.querySelectorAll('.case-card').forEach(function(card){
+        if(cat === 'all' || card.dataset.cat === cat){
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

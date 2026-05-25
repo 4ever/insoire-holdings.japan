@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9XV269N1V7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9XV269N1V7');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>コラム・ブログ | Inspire Holdings株式会社</title>
+<meta name="description" content="フィリピン進出・法人設立・不動産・移住に関する最新情報をコラム形式で発信。Inspire Holdings の専門スタッフが解説します。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="canonical" href="https://inspire-holdings.co.jp/blog.html" />
+<link rel="alternate" hreflang="ja" href="https://inspire-holdings.co.jp/blog.html" />
+<link rel="alternate" hreflang="en" href="https://inspire-holdings.co.jp/en/blog.html" />
+<link rel="alternate" hreflang="x-default" href="https://inspire-holdings.co.jp/blog.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Inspire Holdings Inc." />
+<meta property="og:title" content="コラム・ブログ | Inspire Holdings株式会社" />
+<meta property="og:description" content="フィリピン進出・法人設立・不動産・移住に関する最新情報を専門スタッフが解説。" />
+<meta property="og:url" content="https://inspire-holdings.co.jp/blog.html" />
+<meta property="og:image" content="https://inspire-holdings.co.jp/assets/img/ogp.png" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<style>
+.page-hero--blog .hero-bg {
+  background-image: linear-gradient(135deg,#2a3a52 0%,#1a2332 100%);
+}
+/* blog filter */
+.blog-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.blog-filter-btn {
+  padding: 7px 18px;
+  border: 1.5px solid var(--accent);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.blog-filter-btn:hover,
+.blog-filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+/* blog grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media(max-width:900px){ .blog-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:580px){ .blog-grid{grid-template-columns:1fr} }
+.blog-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .25s, transform .25s;
+}
+.blog-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  transform: translateY(-3px);
+}
+.blog-card-thumb {
+  height: 160px;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #2a3a52 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+.blog-card-body {
+  padding: 18px 20px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.blog-card-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.blog-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+.blog-date {
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+.blog-card-title {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--bg-dark);
+  line-height: 1.6;
+  margin-bottom: 10px;
+  flex: 1;
+}
+.blog-card-excerpt {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.blog-read-more {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.blog-read-more:hover { text-decoration: underline; }
+/* featured post */
+.blog-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1.5px solid var(--accent);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+@media(max-width:700px){ .blog-featured{grid-template-columns:1fr} }
+.blog-featured-thumb {
+  min-height: 240px;
+  background: linear-gradient(135deg, #1a2332 0%, #2a3a52 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+}
+.blog-featured-body {
+  padding: 36px 32px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blog-featured-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.blog-featured-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--bg-dark);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.blog-featured-excerpt {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/img/ihilogo.webp" alt="Inspire Holdings" class="logo-img logo-img--header" width="128" height="36" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="company.html">COMPANY</a>
+      <div class="nav-item nav-item--drop">
+        <a href="service.html">SERVICE <span class="drop-arrow">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="service.html">サービス概要</a>
+          <a href="ph-economy.html">フィリピン経済動向</a>
+          <a href="faq.html">よくある質問</a>
+        </div>
+      </div>
+      <a href="hiring.html">採用情報</a>
+      <a href="request.html">CONTACT</a>
+      <span class="lang"><a href="en/blog.html">EN</a> <span class="sep">|</span> <a class="active">日本語</a></span>
+      <a href="request.html" class="cta-btn">REQUEST INFO</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="menu">≡</button>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero page-hero--blog">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a><span class="sep">/</span><span>コラム・ブログ</span>
+    </div>
+    <h1 class="page-hero-title">コラム・ブログ</h1>
+    <p class="page-hero-sub">
+      フィリピン進出・不動産・移住・ビジネスに関する<br>
+      最新情報と専門解説を定期配信しています。
+    </p>
+  </div>
+</section>
+
+<!-- ===== BLOG BODY ===== -->
+<section class="section">
+  <div class="container">
+
+    <!-- 注目記事 -->
+    <div class="blog-featured">
+      <div class="blog-featured-thumb">🇵🇭</div>
+      <div class="blog-featured-body">
+        <div class="blog-featured-label">✦ FEATURED ARTICLE</div>
+        <h2 class="blog-featured-title">2026年最新版｜フィリピンで会社を設立する手順と費用を徹底解説</h2>
+        <p class="blog-featured-excerpt">OPC・Corporation・Representative Officeの違いから、SEC/BIR登録の手順、実際にかかる費用まで。初めてフィリピン進出を検討している方向けの完全ガイドです。</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <span class="blog-tag">法人設立</span>
+          <span class="blog-date">2026年5月15日</span>
+          <a href="blog/2026-05-ph-company-setup.html" class="blog-read-more">記事を読む →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- フィルター -->
+    <div class="blog-filter">
+      <button class="blog-filter-btn active" data-cat="all">すべて</button>
+      <button class="blog-filter-btn" data-cat="bizz">法人設立・進出</button>
+      <button class="blog-filter-btn" data-cat="realestate">不動産</button>
+      <button class="blog-filter-btn" data-cat="life">移住・ライフスタイル</button>
+      <button class="blog-filter-btn" data-cat="economy">経済・市場情報</button>
+    </div>
+
+    <!-- 記事グリッド -->
+    <div class="blog-grid">
+
+      <div class="blog-card" data-cat="bizz">
+        <div class="blog-card-thumb">🏢</div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">法人設立</span>
+            <span class="blog-date">2026年5月15日</span>
+          </div>
+          <h3 class="blog-card-title">フィリピン法人設立の全手順｜SEC・BIR・LGU登録を図解で解説</h3>
+          <p class="blog-card-excerpt">フィリピンで会社を作る際に必要な手続きをステップごとに解説。初心者でも迷わない完全ガイド。</p>
+          <a href="blog/2026-05-ph-company-setup.html" class="blog-read-more">続きを読む →</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="bizz">
+        <div class="blog-card-thumb">📊</div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">進出戦略</span>
+            <span class="blog-date">2026年4月28日</span>
+          </div>
+          <h3 class="blog-card-title">BGC vs マカティ｜日本企業はどちらにオフィスを構えるべきか？</h3>
+          <p class="blog-card-excerpt">フィリピン最大のビジネスエリア2地区を、賃料・アクセス・人材供給・生活環境の観点から比較。</p>
+          <a href="blog/2026-04-bgc-vs-makati.html" class="blog-read-more">続きを読む →</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="realestate">
+        <div class="blog-card-thumb">🏠</div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">不動産</span>
+            <span class="blog-date">2026年4月10日</span>
+          </div>
+          <h3 class="blog-card-title">日本人がフィリピンのコンドミニアムを取得する方法｜法的手続きと注意点</h3>
+          <p class="blog-card-excerpt">外国人によるフィリピン不動産取得のルール、コンドミニアム取得の具体的な手順を法務の観点から解説。</p>
+          <a href="blog/2026-04-ph-condo-guide.html" class="blog-read-more">続きを読む →</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="life">
+        <div class="blog-card-thumb">✈️</div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">移住</span>
+            <span class="blog-date">2026年3月20日</span>
+          </div>
+          <h3 class="blog-card-title">フィリピン移住のビザ完全比較｜SRRV・就労ビザ・投資ビザの違いとは</h3>
+          <p class="blog-card-excerpt">目的・年齢・資産状況別に最適なビザの種類を解説。申請費用と期間の目安も掲載。</p>
+          <a href="blog/2026-03-ph-visa-guide.html" class="blog-read-more">続きを読む →</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="economy">
+        <div class="blog-card-thumb">📈</div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">経済情報</span>
+            <span class="blog-date">2026年3月5日</span>
+          </div>
+          <h3 class="blog-card-title">2026年フィリピン経済展望｜GDP6%成長を支える3つのエンジン</h3>
+          <p class="blog-card-excerpt">OFW送金・BPO産業・観光の回復——フィリピン経済を牽引する要因を最新データとともに解説。</p>
+          <a href="ph-economy.html" class="blog-read-more">続きを読む →</a>
+        </div>
+      </div>
+
+      <div class="blog-card" data-cat="life">
+        <div class="blog-card-thumb">🏫</div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-tag">教育・生活</span>
+            <span class="blog-date">2026年2月18日</span>
+          </div>
+          <h3 class="blog-card-title">マニラのインターナショナルスクール5校を徹底比較｜学費・カリキュラム・立地</h3>
+          <p class="blog-card-excerpt">子連れでフィリピン移住を検討している方向けに、BGC・マカティの主要インター5校を比較。</p>
+          <a href="blog/2026-02-manila-international-schools.html" class="blog-read-more">続きを読む →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER CTA ===== -->
+<section class="section section-dark" style="padding:60px 0">
+  <div class="container" style="text-align:center;max-width:640px;margin:0 auto">
+    <span class="section-tag light">— NEWSLETTER</span>
+    <h2 class="section-title" style="color:var(--text-on-dark);margin:12px 0">最新コラムをメールで受け取る</h2>
+    <p style="color:var(--text-on-dark);opacity:0.75;font-size:14px;margin-bottom:28px;line-height:1.8">フィリピン進出・不動産・移住に関する最新情報を月2回お届けします。配信停止はいつでも可能です。</p>
+    <a href="request.html" class="btn-primary">メルマガに登録する（無料）</a>
+  </div>
+</section>
+
+<!-- ===== CONSULT CTA BAND ===== -->
+<section class="consult-band">
+  <div class="container">
+    <div>
+      <h2>記事を読んで気になったことはご相談ください。</h2>
+      <p>
+        コラムで解説しきれない個別のご質問も、専門スタッフが丁寧にお答えします。初回無料。
+      </p>
+      <a href="request.html" class="btn-primary">無料相談を申し込む</a>
+    </div>
+    <div class="consult-actions">
+      <div class="consult-phone">
+        <div class="ph-label">PHONE</div>
+        <div class="ph-num">03-6823-5140</div>
+        <div class="ph-hours">受付時間 9:00 – 17:00 (土日祝休)</div>
+      </div>
+      <div class="consult-phone">
+        <div class="ph-label">LINE</div>
+        <a href="https://line.me/R/ti/p/@276vfbxo" target="_blank" rel="noopener" style="margin-top:8px;display:inline-block">
+          <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" style="height:40px;width:auto;border-radius:4px">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo_holdings.webp" alt="Inspire Holdings" class="logo-img logo-img--footer" width="958" height="260" />
+      </a>
+      <p>世界規模の投資・移住という複雑な課題を、ビジネス・個人双方に分かりやすく。Inspire Holdings は日比間をつなぐ総合ソリューション・パートナーです。</p>
+      <p style="margin-top:14px"><a href="request.html" style="color:var(--accent);font-weight:600;letter-spacing:0.15em;font-size:12px">→ REQUEST FORM</a></p>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="company.html">About Us</a></li>
+        <li><a href="cases.html">事例・実績</a></li>
+        <li><a href="hiring.html">採用情報</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="request.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="service.html#business">Business Related</a></li>
+        <li><a href="service.html#general">General Support</a></li>
+        <li><a href="service.html#ecommerce">E-Commerce</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="pricing.html">料金プラン</a></li>
+        <li><a href="seminar.html">セミナー情報</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Office</h5>
+      <ul>
+        <li>〒100-8283</li>
+        <li>東京都千代田区<br>丸の内一丁目8番3号</li>
+        <li>Mon - Fri: 9:00 – 18:00</li>
+        <li>03-6823-5140</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Inspire Holdings株式会社. All Rights Reserved.</span>
+    <span><a href="privacy.html">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+<script>
+(function(){
+  document.querySelectorAll('.blog-filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.blog-filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.dataset.cat;
+      document.querySelectorAll('.blog-card').forEach(function(card){
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
